@@ -1,22 +1,25 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import Products from '../views/Products.vue'
-import Product from '../views/Product.vue'
+import Home from '../views/Home.vue';
+import Products from '../views/Products.vue';
+import Product from '../views/Product.vue';
+import Login from '../views/Login.vue';
+import Register from '../views/Register.vue';
+import Admin from '../views/Admin.vue';
+import About from '../views/About.vue';
+import Profile from '../views/Profile.vue';
+import Contact from '../views/Contact.vue';
+import Landing from '../views/Landing.vue';
+
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: Home
   },
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-    }
+    component: About
   },
   {
     path: '/products',
@@ -24,9 +27,40 @@ const routes = [
     component: Products
   },
   {
-    path: '/product',
-    name: 'product',
-    component: Product
+    path: '/products/:id',
+    name: 'singleProduct',
+    component: Product,
+    props: true
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: Register
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: Admin
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: Profile
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: Contact
+  },
+  {
+    path: '/landing',
+    name: 'landing',
+    component: Landing
   },
 ]
 
