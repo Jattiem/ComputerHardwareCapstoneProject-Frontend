@@ -6,7 +6,7 @@
         <div class="card bg-light">
           <img :src="product.img" class="card-img-top spin img-fluid center" alt="image">
             <div class="card-body bg-light">
-              <h2 class="card-title1">{{product.title}}</h2>
+              <h2 class="card-title1">{{product.brand}}</h2>
               <h2 class="card-title">R{{product.price}}</h2>
               <!-- <h2 class="card-title">{{product.description}}</h2> -->
                   <button class="btn btn-dark text-black">Add to Cart</button>

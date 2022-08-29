@@ -21,18 +21,18 @@
       <div v-if="products" class="row d-flex justify-content-center">
         <div
           v-for="product in products"
-          :key="product.product_id"
+          :key="product.id"
           class="card mx-2 bg-light"
         >
           <div class="bg-light">
             <img
               :src="product.img"
-              class="spin card-img-top img-fluid cards"
+              class="card-img-top img-fluid cards"
               alt="image"
             />
           </div>
           <div class="card-body">
-            <h5 class="card-title">{{ product.title }}</h5>
+            <h5 class="card-title">{{ product.brand }}</h5>
             <h5>R {{ product.price }}</h5>
             <router-link
               :to="{
@@ -216,31 +216,25 @@ nav {
   display: flex;
   justify-content: center;
 }
-.spin {
-  transition: all 0.3s ease-in-out;
-}
-.spin:hover {
-  /* transition: .50s ease; */
-  /* transition-delay: .50s ease-out; */
-  transform: rotate(-20deg);
-  /* transition: transform .7s ease-in-out; */
-}
+
 .cards {
-  object-fit: cover;
-  height: 150px;
-  width: 300px;
+  padding-top: 10px;
+  object-fit: contain;
   border-radius: 1px;
   border: 1px;
+  height: 200px;
+  width: 150px;
 }
 section {
   margin-top: 100px;
   /* padding-bottom: 100px; */
+  /* margin-bottom: 150px; */
 }
 .products {
   background-color: #ffffff;
 }
 .card {
-  height: 360px;
+  height: 420px;
   width: 250px;
   margin-bottom: 10px;
 }
@@ -248,30 +242,7 @@ section {
   padding-top: 10px;
 }
 .bottom {
-  padding-bottom: 100px;
+  padding-bottom: 150px;
 }
-@media only screen and (min-width: 300px),
-  (min-width: 320px),
-  (min-width: 375px) and (min-width: 301px),
-  (max-width: 321px),
-  (min-width: 376px) {
-  .bottom {
-    padding-bottom: 130px;
-  }
-    .card{
-    height: 360px;
-    width: 250px;
-    margin-bottom: 10px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 769px) {
-  .bottom {
-    padding-bottom: 100px;
-  }
-}
-@media only screen and (min-width: 1024px) and (max-width: 1026px) {
-  .bottom {
-    padding-bottom: 100px;
-  }
-}
+
 </style>

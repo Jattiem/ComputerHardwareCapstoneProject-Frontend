@@ -7,7 +7,8 @@
           <thead class="bg-light">
             <tr>
               <th>ID</th>
-              <th>Title</th>
+              <th>Brand</th>
+              <th>Model</th>
               <th>Category</th>
               <th>Description</th>
               <th>Image</th>
@@ -19,7 +20,8 @@
           <tbody>
             <tr v-for="product in products" :key="product.id">
               <td>{{ product.id }}</td>
-              <td>{{ product.title }}</td>
+              <td>{{ product.brand }}</td>
+              <td>{{product.Model}}</td>
               <td>{{ product.category }}</td>
               <td class="des" style="width: 20rem;">{{ product.description }}</td>
               <td><img :src="product.img" class="img-fluid" alt="" /></td>

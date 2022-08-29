@@ -29,11 +29,12 @@
         /* position: sticky; */
     }
     .home {
-      background: url(https://i.postimg.cc/xj74cvDc/logo-brand-clothing-shoe-sneakers-png-favpng-Li-Z1c4-Q3s39-AD7-Vhiw64t-WXc-B.jpg),
-       linear-gradient(rgba(0, 0, 0, 0.295), rgb(0, 0, 0));
-      background-blend-mode: overlay;
-      /* background-size: cover; */
-      background-position: center center;
-      background-attachment: fixed; 
-    }
+  background: url(https://i.postimg.cc/05z4rb8h/52-520290-rgb-live-wallpaper-pc.jpg),
+   linear-gradient(rgba(0, 0, 0, 0.295), rgb(0, 0, 0));
+  background-blend-mode: overlay;
+  background-size: cover;
+  /* background-position: center center; */
+  background-attachment: fixed; 
+}
+
     </style>

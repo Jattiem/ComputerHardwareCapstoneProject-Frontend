@@ -1,7 +1,7 @@
 <template>
   <nav id="nav" class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-      <router-link class="navbar-brand spin"  to="#"><img src="https://i.postimg.cc/gkTytsLv/360-F-136554929-JG7-RLQNf-AKp-AQlm-Rmd-V7-Qhb-EM1-PDt6k2.jpg" alt=""></router-link>
+      <router-link class="navbar-brand spin"  to="#"><img src="https://i.postimg.cc/mk3ChYhQ/wp9360883.jpg" alt=""></router-link>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -74,10 +74,7 @@
     transition: all 0.3s ease-in-out;
   }
   .spin:hover {
-  /* transition: .50s ease; */
-  /* transition-delay: .50s ease-out; */
   transform: rotate(-20deg);
-  /* transition: transform .7s ease-in-out; */
   }
   #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -107,7 +104,9 @@
   }
   img{
     height: 80px;
+    width: 80px;
     border-radius: 50px;
+    object-fit: cover;
   }
   .shopicon{
     /* height: 20px; */
