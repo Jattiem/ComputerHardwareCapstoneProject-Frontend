@@ -1,6 +1,6 @@
 <template>
   <section class="products vh-100">
-    <h2 class="h2">All Products</h2>
+    <h2 class="h2">Products</h2>
     <div class="container">
       <div class="row sort">
         <div class="col-md-3">

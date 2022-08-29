@@ -27,6 +27,32 @@ export default createStore({
     }
   },
   actions: {
+    addCart(context, payload){
+      const {brand,Model, category, description, image, price} = payload
+      fetch('https://computer-hardware-capstone.herokuapp.com/users/' + context.state.users.id + '/cart', {
+      method: 'POST',
+      body: JSON.stringify({
+          brand: brand,
+          Model: Model,
+          category: category,
+          description: description,
+          img: img,
+          price: price
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+      })
+      .then((response) => response.json())
+      .then((data) => {
+          if (data.results == 'There is no user with that id') {
+            alert(data.results)
+          } else {
+            alert('Item Added')
+            context.dispatch('getUserCart')
+          }
+    })
+  },
 
     // delete product
     deleteProduct: async (context, id) => {
@@ -98,6 +124,18 @@ export default createStore({
       }
     },
 
+
+    async editProduct(context,payload){
+      fetch('https://computer-hardware-capstone.herokuapp.com/products/'+payload.id, {
+          method:'PUT',
+          body: JSON.stringify(payload),
+          headers:{
+              'Content-type': 'application/json; charset=UTF-8'
+          }
+      })
+      .then((res)=> res.json())
+      .then((data)=> context.dispatch('getProducts'));
+  },
 
     async getProducts(context) {
       await fetch(moduleprojectUrl + "products")

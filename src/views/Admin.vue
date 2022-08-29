@@ -3,6 +3,13 @@
       <section v-if="products" class="admin vh-100">
         <h2 class="h2 pt-2">Admin</h2>
         <a href="" class="add">Add product</a>
+        <button
+                  data-bs-toggle="modal" data-bs-target="#addProduct"
+                  class="btn-add"
+                >
+                  ADD
+                </button>
+                <Add :product="product" />
         <table class="table align-middle mb-0 bg-white"  style="overflow-x:auto;">
           <thead class="bg-light">
             <tr>
@@ -46,6 +53,7 @@
     
     <script>
     import Navbar from '@/components/Navbar.vue';
+    import Add from '../components/Add.vue';
     export default {
       props: ["product"],
       mounted() {
@@ -57,7 +65,7 @@
           return this.$store.state.products;
         },
       },
-        components: { Navbar }
+        components: { Navbar,Add }
     };
     </script>
     
