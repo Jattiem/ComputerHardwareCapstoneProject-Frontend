@@ -17,6 +17,9 @@
             <option value="Descending">Min price</option>
           </select>
         </div>
+        <div class="col-md-3">
+          <input class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search"> 
+        </div>
       </div>
       <div v-if="products" class="row d-flex justify-content-center">
         <div
@@ -80,6 +83,31 @@ export default {
     // this.$store.dispatch('clearSingleProduct');
   },
 };
+// import Cards from "../components/Cards.vue";
+
+// export default {
+//   props: ["product"],
+//   components:{Cards},
+//     data(){
+//       return{
+//         search: ''
+//       }
+//     },
+//   mounted() {
+//     this.$store.dispatch("getProducts");
+//   },
+//   computed: {
+//     products() {
+//       return this.$store.state.products?.filter(products =>{
+//           let isMatch = true;
+//           if (!products.title.toLowerCase().includes(this.search.toLowerCase())) {
+//               isMatch = false;
+//           }
+//           return isMatch
+//           })
+//         }
+//   },
+// };
 </script>
 
 <style scoped>

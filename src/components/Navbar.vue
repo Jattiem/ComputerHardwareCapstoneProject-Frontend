@@ -32,7 +32,6 @@
         <form class="d-flex search" role="search">
             <router-link class="logout"  to="/">Logout</router-link>
             <br>
-          <input class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search">
           <!-- <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button> -->
         </form>
         <!-- <button><a href="../components/Navbar1.vue">Logout</a></button> -->

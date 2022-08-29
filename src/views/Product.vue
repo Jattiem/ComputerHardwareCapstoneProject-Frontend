@@ -4,11 +4,11 @@
         <h2 class="h2">Product</h2>
         <div class="container">
         <div class="card bg-light">
-          <img :src="product.img" class="card-img-top spin img-fluid center" alt="image">
+          <img :src="product.img" class="card-img-top img-fluid center" alt="image">
             <div class="card-body bg-light">
               <h2 class="card-title1">{{product.brand}}</h2>
               <h2 class="card-title">R{{product.price}}</h2>
-              <!-- <h2 class="card-title">{{product.description}}</h2> -->
+              <h2 class="card-title">{{product.description}}</h2> 
                   <button class="btn btn-dark text-black">Add to Cart</button>
             </div>           
         </div>
@@ -81,23 +81,5 @@
     }
     .h2{
       padding-top: 10px
-    }
-    .spin{
-      transition: all 0.3s ease-in-out;
-    }
-    .spin:hover {
-    /* transition: .50s ease; */
-    /* transition-delay: .50s ease-out; */
-    transform: rotate(-20deg);
-    /* transition: transform .7s ease-in-out; */
-    }
-      @media only screen and (min-width:300px) and (max-width: 301px){
-      .card{
-        height: 25rem;
-      }
-      section{
-        /* padding-top: -40px; */
-        margin-bottom: 150px;
-      }
     }
     </style>
