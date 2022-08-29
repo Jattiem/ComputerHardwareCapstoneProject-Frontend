@@ -8,6 +8,10 @@ export default createStore({
     products: null,
     singleproduct: null,
     users: null,
+    user: null,
+    token: null,
+    cart: null,
+    total: 0
 
   },
   getters: {
@@ -24,11 +28,26 @@ export default createStore({
     },
     setSingleProduct(state, singleproduct) {
       state.singleproduct = singleproduct;
+    },
+    setUser(state, user){
+      state.user = user
+    },
+    setToken(state, token){
+      state.token = token
+    },
+    setUserCart(state, cart){
+      state.cart = cart
+    },
+    setUsers(state, users){
+      state.users = users
+    },  
+    setTotal(state, total){
+      state.total = total
     }
   },
   actions: {
     addCart(context, payload){
-      const {brand,Model, category, description, image, price} = payload
+      const {brand,Model, category, description, img, price} = payload
       fetch('https://computer-hardware-capstone.herokuapp.com/users/' + context.state.users.id + '/cart', {
       method: 'POST',
       body: JSON.stringify({

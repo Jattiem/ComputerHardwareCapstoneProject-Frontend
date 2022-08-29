@@ -45,7 +45,7 @@
           img:'',
           description:'',
           category:'',
-          price:'',
+          price:''
       }
      },
       computed:{
@@ -61,7 +61,7 @@
                   Model: this.Model,
                   img: this.img,
                   description: this.description,
-                  category: this.category ,
+                  category: this.category,
                   price: this.price
               }
               this.$store.dispatch('addProduct',newProduct);
