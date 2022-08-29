@@ -18,7 +18,7 @@
           </thead>
           <tbody>
             <tr v-for="product in products" :key="product.id">
-              <td>{{ product.product_id }}</td>
+              <td>{{ product.id }}</td>
               <td>{{ product.title }}</td>
               <td>{{ product.category }}</td>
               <td class="des" style="width: 20rem;">{{ product.description }}</td>
@@ -29,7 +29,7 @@
               <td>
                 <button
                   id="delete"
-                  v-on:click="$store.dispatch('deleteProduct', product.product_id)"
+                  v-on:click="$store.dispatch('deleteProduct', product.id)"
                 >
                   <a class="iconadmin bi bi-x-square"></a>
                 </button>
