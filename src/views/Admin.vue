@@ -1,16 +1,11 @@
 <template>
     <Navbar/>
-      <section v-if="products" class="admin vh-100">
+      <section class="admin vh-100">
         <h2 class="h2 pt-2">Admin</h2>
-        <a href="" class="add">Add product</a>
-        <button
-                  data-bs-toggle="modal" data-bs-target="#addProduct"
-                  class="btn-add"
-                >
-                  ADD
-                </button>
+        <a href="" data-bs-toggle="modal" data-bs-target="#addProduct"
+                  class="btn-add add" v-if="products">Add product</a>
                 <Add :product="product" />
-        <table class="table align-middle mb-0 bg-white"  style="overflow-x:auto;">
+        <table  class="table align-middle mb-0 bg-white"  style="overflow-x:auto;">
           <thead class="bg-light">
             <tr>
               <th>ID</th>
@@ -38,7 +33,6 @@
               <td>
                 <button
                   id="delete"
-                  v-on:click="$store.dispatch('deleteProduct', product.id)"
                 >
                   <a class="iconadmin bi bi-x-square"></a>
                 </button>
@@ -48,7 +42,6 @@
           </tbody>
         </table>
       </section>
-                <!-- <div v-else>Hello</div> -->
     </template>
     
     <script>
@@ -58,14 +51,19 @@
       props: ["product"],
       mounted() {
         this.$store.dispatch("getProducts");
-        // this.$store.dispatch('clearSingleProduct');
       },
       computed: {
         products() {
-          return this.$store.state.products;
-        },
-      },
-        components: { Navbar,Add }
+      return this.$store.state.products;
+    },
+    users() {
+      return this.$store.state.users;
+    },
+    user(){
+      return this.$store.state.user
+    }
+  },
+        components: { Navbar,Add}
     };
     </script>
     
@@ -83,15 +81,10 @@
     h2 {
       margin-top: 160px;
     }
-    /* nav{
-      display: flex;
-      justify-content: center;
-    } */
     .add {
       display: flex;
       justify-content: flex-end;
       flex-direction: row;
-      /* margin-bottom: 40px; */
       padding-bottom: 10px;
       text-decoration: none;
     }
@@ -100,41 +93,18 @@
     }
     section {
       margin-top: 100px;
-      /* margin-top: -200px; */
       margin-left: 20px;
       margin-right: 20px;
-      /* margin-bottom: 300px; */
     }
     img {
       width: 8rem;
-      /* border: 1px solid gray; */
+      border: 1px;
+      border-radius: 1px;
     }
-    /* @media only screen and (min-width: 320px) and (max-width: 321px) {
-      table {
-       overflow-x: auto;
-      }
-    }  */
     .des[data-v-4579cfca] {
         width: 100%;
         font-size: small;
     }
-    /* table {
-      border: 1px solid #ccc;
-      border-collapse: collapse;
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      table-layout: fixed;
-    } */
-    /* table caption {
-      font-size: 1.5em;
-      margin: .5em 0 .75em;
-    } */
-    /* table tr {
-      background-color: #f8f8f8;
-      border: 1px solid #ddd;
-      padding: .35em;
-    } */
     table th,
     table td {
       padding: .625em;
@@ -143,7 +113,8 @@
     table th {
       text-transform: uppercase;
     }
-    @media screen and (max-width: 600px) {
+    /* @Media */
+    /* @media screen and (max-width: 600px) {
       table {
         border: 0;
         text-align: center;
@@ -179,10 +150,6 @@
       }
       
       table td::before {
-        /*
-        * aria-label has no advantage, it won't be read inside a table
-        content: attr(aria-label);
-        */
         content: attr(data-label);
         float: left;
         font-weight: bold;
@@ -190,12 +157,9 @@
       }
       
       table td:last-child {
+
         border-bottom: 0;
       }
-    }
-    /* general styling */
-    /* body {
-      font-family: "Open Sans", sans-serif;
-      line-height: 1.25;
     } */
+
     </style>

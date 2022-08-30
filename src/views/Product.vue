@@ -6,9 +6,10 @@
         <div class="card bg-light">
           <img :src="product.img" class="card-img-top img-fluid center" alt="image">
             <div class="card-body bg-light">
-              <h2 class="card-title1">{{product.brand}}</h2>
-              <h2 class="card-title">R{{product.price}}</h2>
-              <h2 class="card-title">{{product.description}}</h2> 
+              <h5 class="card-title1">{{product.brand}}</h5>
+              <h5 class="card-title1">{{product.Model}}</h5>
+              <h5 class="card-title">R{{product.price}}</h5>
+              <h5 class="card-title">{{product.description}}</h5> 
                   <button class="btn btn-dark text-black">Add to Cart</button>
             </div>           
         </div>
@@ -22,13 +23,14 @@
     <script>
     import Navbar from '@/components/Navbar.vue';
     export default {
+      props : ["id"],
         computed: {
             product() {
-                return this.$store.state.singleproduct;
+                return this.$store.state.product;
             }
         },
         mounted() {
-            this.$store.dispatch("getSingleProducts", this.$route.params.id);
+            this.$store.dispatch("getProduct", this.id);
         },
         methods: {},
         components: { Navbar }
@@ -58,26 +60,30 @@
     }
     .page-link{
       color: rgba(0, 0, 0, 0.795);
-      /* background-color: gray; */
     }
     .card{
       display: flex;
       margin-left: auto;
       margin-right: auto;
+      width: 300px;
+      /* height: 300px; */
     }
     .card-title{
       padding-bottom: 1px;
     }
     img{
       object-fit: cover;
-      height: 200px;
-      width: 200px;
-      align-items: center;
-      margin-left: 50px;
+      /* height: 200px; */
+      width: 150px;
+      /* align-items: center; */
+      margin-left: 75px;
+      border: 1px;
+      border-radius: 1px;
+      padding-top: 10px;
     }
     section{
       margin-top: 100px;
-      margin-bottom: 120px;
+      margin-bottom: 150px;
     }
     .h2{
       padding-top: 10px

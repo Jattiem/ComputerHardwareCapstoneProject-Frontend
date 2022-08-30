@@ -1,13 +1,6 @@
 <template>
     <footer id="footer" class="bg-light">
         <div class="container">
-            <!-- <div class="icons">
-                    <i class="bi bi-github"></i>
-                    <i class="bi bi-facebook"></i>
-                    <i class="bi bi-youtube"></i>
-                    <i class="bi bi-instagram"></i>
-                    <i class="bi bi-pinterest"></i>
-            </div> -->
             <ul class="wrapper">
   <li class="icon facebook">
     <span class="tooltip">Facebook</span>
@@ -28,7 +21,7 @@
 </ul>
             <hr>
             <div class="pb-2">
-                Copyright © 2022 All Rights Reserved by Yaseen Jattiem.
+                Copyright © 2022 All Rights Reserved by Yaseen Jattiem
             </div>
         </div>
     </footer>

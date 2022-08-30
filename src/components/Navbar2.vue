@@ -10,9 +10,6 @@
             <li class="nav-item">
               <router-link class="nav-link" aria-current="page" to="/">Home</router-link>
             </li>
-            <!-- <li class="nav-item">
-              <router-link class="nav-link"  to="/products">Products</router-link>
-            </li> -->
             <li class="nav-item">
               <router-link class="nav-link"  to="/login">Login</router-link>
             </li>
@@ -36,10 +33,7 @@
       transition: all 0.3s ease-in-out;
     }
     .spin:hover {
-    /* transition: .50s ease; */
-    /* transition-delay: .50s ease-out; */
     transform: rotate(-20deg);
-    /* transition: transform .7s ease-in-out; */
     }
     #app {
       font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -72,9 +66,7 @@
       border-radius: 50px;
     }
     .shopicon{
-      /* height: 20px; */
       font-size: 25px;
-      /* padding-bottom: px; */
       padding-bottom: 16px;
     }
     .shopicon:hover{
@@ -84,9 +76,7 @@
       color: black  ;
     }
     .personicon{
-      /* height: 20px; */
       font-size: 30px;
-      /* padding-bottom: 10px; */
     }
     @media only screen and (min-width:320px),(min-width:375px)  and (max-width: 321px),(max-width:376px) {
       .dicons{

@@ -11,7 +11,7 @@
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
-                        <input type="text" v-model="user_fullname" id="user_fullname" placeholder="Enter Your Full Name" required class="form-control form-control-lg"/>
+                        <input type="text" v-model="fullname" id="user_fullname" placeholder="Enter Your Full Name" required class="form-control form-control-lg"/>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -28,35 +28,14 @@
                     </div>
                     <div class="col-md-6 mb-4 pb-2">
                       <div class="form-outline">
-                        <input class="form-control form-control-lg" type="tel" v-model="phone_number" id="phone_number" placeholder=" Enter Your Phone Number" maxlength="10" required/>
+                        <input class="form-control form-control-lg" type="tel" v-model="phonenumber" id="phone_number" placeholder=" Enter Your Phone Number" maxlength="10" required/>
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-6 mb-4 pb-2">
-                      <div class="form-outline date">
-                        <input class="form-control form-control-lg" type="date" v-model="join_date" id="join_date" placeholder="Enter current date" required/>
-                      </div>
-                    </div>
                   <div class="row">
-                    <input v-on:click="submit" class="btn btn-dark input" type="submit" value="Register" />
+                    <input @click="register()" class="btn btn-dark input" type="button" value="Register" />
                   </div>
-                </form>
-    
-                <!-- <form @submit.prevent="register" method="POST">
-    <label for="fullname">Name:</label><br>
-    <input type="text" v-model="user_fullname" id="user_fullname" placeholder="user_fullname" required><br>
-    <label for="email">Email:</label><br>
-    <input type="email" v-model="email" id="email" placeholder="email" required><br>
-    <label for="password">Password:</label><br>
-    <input type="password" v-model="password" id="password" placeholder="password" minlength="8" maxlength="15" required><br>
-    <label for="phone_number">Phone Number:</label><br>
-    <input type="tel" v-model="phone_number" id="phone_number" placeholder=" Enter your phone number" maxlength="10" required><br>
-    <label for="date">Date:</label><br>
-    <input type="date" v-model="join_date" id="join_date" placeholder="Enter current date" required><br>
-    <button class="mt-4" v-on:click="submit">Register</button> -->
-    
-    
-                
+                </form>  
               </div>
             </div>
           </div>
@@ -70,31 +49,31 @@
     export default {
         data() {
             return {
-                user_fullname: "",
+                fullname: "",
                 email: "",
                 password: "",
-                //  userRole: '',
-                phone_number: "",
-                join_date: "",
+                phonenumber: "",
+                userRole: "",
             };
         },
-        methods: {
-            register() {
-                this.$store.dispatch("register", {
-                    user_fullname: this.user_fullname,
-                    email: this.email,
-                    password: this.password,
-                    // userRole: this.userRole,
-                    phone_number: this.phone_number,
-                    join_date: this.join_date,
-                });
-            }
-        },
-        components: { Navbar2 }
+        methods:{
+    register(){
+      const user = {
+          fullname: this.fullname,
+          email: this.email,
+          password: this.password,
+          phonenumber: this.phonenumber,
+          userRole: this.userRole
+      }
+      this.$store.dispatch('register', user) 
     }
+  },
+        components: { Navbar2 }
+    };
     </script>
     
     <style scoped>
+
     section{
       overflow-x: hidden; 
     }
@@ -105,8 +84,6 @@
     }
     .page-link{
       color: rgba(0, 0, 0, 0.795);
-      /* background-color: gray; */
-      /* margin-bottom: 10px; */
       margin-top: -10px;
     }
     nav{
@@ -128,7 +105,6 @@
         height: 530px;
       }
       section{
-        /* padding-top: -40px; */
         margin-bottom: 150px;
       }
     }
@@ -137,7 +113,6 @@
         height: 520px;
       }
       section{
-        /* padding-top: -40px; */
         margin-bottom: 140px;
       }
     }
@@ -146,7 +121,6 @@
         height: 520px;
       }
       section{
-        /* padding-top: -40px; */
         margin-bottom: 140px;
       }
     }
@@ -155,7 +129,6 @@
         height: 520px;
       }
       section{
-        /* padding-top: -40px; */
         margin-bottom: 150px;
       }
     }

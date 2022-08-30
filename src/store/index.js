@@ -6,7 +6,7 @@ const moduleprojectUrl = "https://computer-hardware-capstone.herokuapp.com/";
 export default createStore({
   state: {
     products: null,
-    singleproduct: null,
+    product: null,
     users: null,
     user: null,
     token: null,
@@ -15,19 +15,16 @@ export default createStore({
 
   },
   getters: {
-    getUsers: state => state.users,
-    getProducts: state => state.products
   },
   mutations: {
-    setUsers(state, values) {
-      state.users = values
+    setProduct(state, product){
+    state.product = product
     },
-
     setProducts(state, products) {
       state.products = products;
     },
-    setSingleProduct(state, singleproduct) {
-      state.singleproduct = singleproduct;
+    setUsers(state, values) {
+      state.users = values
     },
     setUser(state, user){
       state.user = user
@@ -38,14 +35,25 @@ export default createStore({
     setUserCart(state, cart){
       state.cart = cart
     },
-    setUsers(state, users){
-      state.users = users
-    },  
     setTotal(state, total){
       state.total = total
     }
   },
   actions: {
+    async addProduct(context,payload){
+      fetch('https://computer-hardware-capstone.herokuapp.com/products', {
+          method:'POST',
+          body: JSON.stringify(payload),
+          headers:{
+              'Content-type': 'application/json; charset=UTF-8'
+          }
+      })
+      .then((res)=> res.json())
+      .then((data)=> context.dispatch('getProducts'));
+  },
+  
+    // Cart
+    /********************************************************************************************************* */
     addCart(context, payload){
       const {brand,Model, category, description, img, price} = payload
       fetch('https://computer-hardware-capstone.herokuapp.com/users/' + context.state.users.id + '/cart', {
@@ -72,51 +80,46 @@ export default createStore({
           }
     })
   },
-
+  /****************************************************************************************************************** */
+/***************************************************************************************************************** */
     // delete product
-    deleteProduct: async (context, id) => {
-      fetch("https://computer-hardware-capstone.herokuapp.com/products/" + id, {
-          method: "DELETE",
-        })
-        .then((res) => res.json())
-        .then(() => context.dispatch('getProducts'), alert('Delete was successfull! Refresh the page.'));
-    },
+    async deleteProduct(context,payload){
+      fetch('https://computer-hardware-capstone.herokuapp.com/products/'+payload, {
+          method:'DELETE'
+      })
+      .then((res)=> res.json())
+      .then((data)=> context.dispatch('getProducts'))
+  },
+/******************************************************************************************************************* */
+/******************************************************************************************************************************************* */
+    // Register
+    register(context, payload){
+      const {fullname, email, password, phonenumber} = payload
+      fetch('https://computer-hardware-capstone.herokuapp.com/users', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.msg == "The provided email exists. Please enter another one") {
+          alert("The provided email exists. Please enter another one");
+        } else {
+          alert('Registration Successful');
+          context.commit('setToken',data.token);
+          setTimeout(()=>{
+            router.push('/login'), 5000
+          })
+        }
 
-    // register
-    register: async (context, payload) => {
-      const {
-        fullname,
-        email,
-        password,
-        phonenumber,
-        userRole,
-        dateJoined,
-        cart
-      } = payload;
-      await fetch(moduleprojectUrl + "register", {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json; charset=UTF-8",
-          },
-          body: JSON.stringify({
-            fullname: fullname,
-            email: email,
-            password: password,
-            phonenumber: phonenumber,
-            userRole: userRole,
-            dateJoined: dateJoined,
-            cart: cart
-          }),
-        })
-        .then((response) => response.json())
-        .then((json) => context.commit("setUser", json),
+      });
 
-          router.push({
-            name: "login"
-          }),
-          alert(`Your Registration was Successfull. Please login!`));
     },
-    // login
+/********************************************************************************************** */
+/********************************************************************************************* */
+// Login
     login: async (context, payload) => {
       const {
         email,
@@ -142,7 +145,7 @@ export default createStore({
     error`
       }
     },
-
+/****************************************************************************************** */
 
     async editProduct(context,payload){
       fetch('https://computer-hardware-capstone.herokuapp.com/products/'+payload.id, {
@@ -155,53 +158,20 @@ export default createStore({
       .then((res)=> res.json())
       .then((data)=> context.dispatch('getProducts'));
   },
-
-    async getProducts(context) {
-      await fetch(moduleprojectUrl + "products")
-        .then((res) => res.json())
-        .then((data) => {
-          // console.log(data);
-            context.commit("setProducts", data.products);
-        })
-    },
-    async getSingleProducts(context, id) {
-      let res = await axios.get(moduleprojectUrl + 'products/' + id);
-      // let {
-      //   results
-      // } = await res.data;
-      context.commit('setSingleProduct', results[0]);
-    }
+/***************************************************************************************** */
+async getProducts(context){
+  let fetched = await fetch('https://computer-hardware-capstone.herokuapp.com/products');
+  let res = await fetched.json();
+  context.commit('setProducts',res.products)
+},
+/******************************************************************************************** */
+async getProduct(context, id){
+  let fetched = await fetch('https://computer-hardware-capstone.herokuapp.com/products/' + id);
+  let res = await fetched.json();
+  console.log(res);
+  context.commit('setProduct',res.products[0])
+},
   },
-
-
-  login: async (context, payload) => {
-    const {
-      email,
-      password
-    } = payload;
-    fetch(moduleprojectUrl + "login", {
-        method: "PATCH",
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": await context.state.token,
-        },
-      })
-      .then((response) => response.json())
-      .then((data) => {
-        alert(data.msg);
-        let user = data.user;
-        let token = data.token;
-        let cart = data.user.cart;
-        context.commit("setuser", user);
-        context.commit("setToken", token);
-        context.commit("setcart", cart);
-      });
-
-
-  },
+/****************************************************************************************** */
   modules: {}
 })

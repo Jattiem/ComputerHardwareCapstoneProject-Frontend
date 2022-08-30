@@ -1,7 +1,6 @@
 <template>
     <Navbar/>
     <section id="about" class="about vh-100">
-      <!-- <div class="card"> -->
         <h2>About</h2>
         <p class="par">Sneakers (also called trainers, athletic shoes, tennis shoes, gym shoes, kicks, sport shoes, flats, running shoes, or runners) are shoes primarily designed for sports or other forms of physical exercise, but which are now also widely used for everyday casual wear.
     
@@ -19,11 +18,8 @@
     <style scoped>
     .page-link{
       color: rgba(0, 0, 0, 0.795);
-      /* background-color: gray; */
     }
     section{
-    /* margin-top: 100px; */
-    /* padding-top: 100px;  */
     overflow-x: hidden;
     }
     h2{
@@ -33,7 +29,6 @@
     p{
         border: 1px solid gray;
         border-radius: 20px;
-        /* margin: 150px; */
         margin-left: 150px;
         margin-right: 150px;
         display: flex;
@@ -54,7 +49,6 @@
         width: 200px;
       }
       .par{
-        /* margin-right: 300px; */
         margin-left: 60px;
       }
       section{
@@ -66,7 +60,6 @@
         width: 200px;
       }
       .par{
-        /* margin-right: 300px; */
         margin-left: 60px;
       }
         section{
@@ -78,7 +71,6 @@
         width: 200px;
       }
       .par{
-        /* margin-right: 300px; */
         margin-left: 90px;
       }
         section{
@@ -90,7 +82,6 @@
         width: 200px;
       }
       .par{
-        /* margin-right: 300px; */
         margin-left: 110px;
       }
         section{

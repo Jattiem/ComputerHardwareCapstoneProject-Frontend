@@ -80,37 +80,14 @@ export default {
   },
   mounted() {
     this.$store.dispatch("getProducts");
-    // this.$store.dispatch('clearSingleProduct');
   },
 };
-// import Cards from "../components/Cards.vue";
-
-// export default {
-//   props: ["product"],
-//   components:{Cards},
-//     data(){
-//       return{
-//         search: ''
-//       }
-//     },
-//   mounted() {
-//     this.$store.dispatch("getProducts");
-//   },
-//   computed: {
-//     products() {
-//       return this.$store.state.products?.filter(products =>{
-//           let isMatch = true;
-//           if (!products.title.toLowerCase().includes(this.search.toLowerCase())) {
-//               isMatch = false;
-//           }
-//           return isMatch
-//           })
-//         }
-//   },
-// };
 </script>
 
 <style scoped>
+.search{
+  margin-top: 24px;
+}
 .dot-spinner {
   --uib-size: 2.8rem;
   --uib-speed: 0.9s;
@@ -199,7 +176,7 @@ export default {
     opacity: 1;
   }
 }
-/* /////////////////////////////////////////////////////////////////////// */
+
 .card {
   background: rgb(236, 236, 236);
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
@@ -235,7 +212,6 @@ button:active {
 }
 .page-link {
   color: rgba(0, 0, 0, 0.795);
-  /* background-color: gray; */
 }
 h2 {
   margin-top: 160px;
@@ -255,8 +231,6 @@ nav {
 }
 section {
   margin-top: 100px;
-  /* padding-bottom: 100px; */
-  /* margin-bottom: 150px; */
 }
 .products {
   background-color: #ffffff;

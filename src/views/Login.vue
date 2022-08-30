@@ -1,32 +1,4 @@
 <template>
-    <!-- <section class="login vh-100">
-       <h2>Login</h2>
-    <div class="container">
-      <div class="row d-flex align-items-center justify-content-center h-100">
-        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-          <form  @submit="login" method="PATCH">
-            
-            <div class="form-outline mb-4">
-              <input required  v-model="email" type="email" id="form1Example13" class="form-control form-control-lg" placeholder="Email Address"/>
-            </div>
-            
-            <div class="form-outline mb-4">
-              <input required v-model="password" type="password" id="form1Example23" class="form-control form-control-lg"  placeholder="Password"/>
-            </div>
-            <div class="d-flex justify-content-around align-items-center mb-4">
-              
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
-                <label class="form-check-label" for="form1Example3"> Remember me </label>
-              </div>
-              <a href="#!">Forgot password?</a>
-            </div>
-                      <button  v-on:click="submit" type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
-          </form>
-        </div>
-      </div>
-    </div>
-    </section> -->
     <Navbar2/>
     <section class="vh-100 gradient-custom login">
     <div class="container">
@@ -43,17 +15,8 @@
   
             
             <div class="form-outline mb-4">
-              <input minlength="8" maxlength="15" required v-model="password" type="password" id="form1Example23" class="form-control form-control-lg"  placeholder="Password"/>
+              <input minlength="4" maxlength="15" required v-model="password" type="password" id="form1Example23" class="form-control form-control-lg"  placeholder="Password"/>
             </div>
-  
-            <!-- <div class="d-flex justify-content-around align-items-center mb-4">
-              
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox"  id="form1Example3" checked />
-                <label class="form-check-label" for="form1Example3"> Remember me </label>
-              </div>
-              <a href="#!">Forgot password?</a>
-            </div> -->
   <div class="row">
     <button  v-on:click="submit" class="login btn btn-dark btn-block">Login</button>
   </div>
@@ -70,7 +33,6 @@
   
   <script>
     import Navbar2 from '@/components/Navbar2.vue';
-  // import NewNav from '@/components/NewNav.vue';
 
   export default {
       data() {
@@ -115,7 +77,6 @@
   @media only screen and (min-width:375px) and (max-width: 376px){
     section{
       margin-bottom: 100px;
-      /* margin-left: 50px; */
     }
     .login{
     width: 93%;
@@ -126,7 +87,6 @@
   @media only screen and (min-width:425px) and (max-width: 426px){
     section{
       margin-bottom: 100px;
-      /* margin-left: 50px; */
     }
     .login{
     width: 93%;
@@ -135,7 +95,6 @@
   }
   }
   section{
-    /* padding-bottom: 1px; */
     overflow-x: hidden; 
   }
   button{
@@ -155,7 +114,6 @@
   }
   .page-link{
     color: rgba(0, 0, 0, 0.795);
-    /* background-color: gray; */
   }
   nav{
     display: flex;

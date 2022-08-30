@@ -45,7 +45,6 @@
                   description: this.product.description,
                   category: this.product.category ,
                   price: this.product.price ,
-                //   created_by: this.created_by
               }
               this.$store.dispatch('editProduct',newProduct);
               document.getElementById(`editProductClose`+this.product.id).click();

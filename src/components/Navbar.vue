@@ -13,12 +13,6 @@
           <li class="nav-item">
             <router-link class="nav-link"  to="/products">Products</router-link>
           </li>
-          <!-- <li class="nav-item">
-            <router-link class="nav-link"  to="/login">Login</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link"  to="/register">Register</router-link>
-          </li> -->
           <li class="nav-item">
             <router-link class="nav-link"  to="/contact">Contact</router-link>
           </li>
@@ -32,16 +26,12 @@
         <form class="d-flex search" role="search">
             <router-link class="logout"  to="/">Logout</router-link>
             <br>
-          <!-- <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button> -->
         </form>
-        <!-- <button><a href="../components/Navbar1.vue">Logout</a></button> -->
-  
         <div class="dicons">
         <div class="personicon">
           <router-link class="nav-link bi bi-person-fill"  to="/profile"></router-link>
           </div>
         <div class="shopicon">
-          <!-- <router-link class="nav-link bi bi-cart-fill"  to="/cart"></router-link> -->
           <button class="nav-link bi bi-cart-fill" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"></button>
         </div>
          </div>
@@ -108,9 +98,7 @@
     object-fit: cover;
   }
   .shopicon{
-    /* height: 20px; */
     font-size: 25px;
-    /* padding-bottom: px; */
     padding-bottom: 16px;
   }
   .shopicon:hover{
@@ -120,9 +108,7 @@
     color: black  ;
   }
   .personicon{
-    /* height: 20px; */
     font-size: 30px;
-    /* padding-bottom: 10px; */
   }
   @media only screen and (min-width:320px),(min-width:375px)  and (max-width: 321px),(max-width:376px) {
     .dicons{

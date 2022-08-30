@@ -76,12 +76,10 @@
     
     <style scoped>
     section{
-      /* padding-top: -70px; */
       overflow-x: hidden;
     }
     .page-link{
       color: rgba(0, 0, 0, 0.795);
-      /* background-color: gray; */
     }
     nav{
       display: flex;
@@ -102,7 +100,6 @@
           margin-top: -20px;
         }
         #email{
-          /* margin-bottom: 10px; */
           margin-top: -20px;
         }
       .card{
@@ -112,11 +109,7 @@
         margin-bottom: 10px;
       }
       section{
-        /* margin-top: -50px; */
-        /* padding-top: -40px; */
         margin-bottom: 150px;
-           /* overflow-x: hidden; */
-           /* padding-bottom: 50px; */
       }
     }
       @media only screen and (min-width:320px) and (max-width: 321px){
@@ -124,7 +117,6 @@
           margin-top: -20px;
         }
         #email{
-          /* margin-bottom: 10px; */
           margin-top: -20px;
         }
       .card{
@@ -132,12 +124,9 @@
       }
       input{
         margin-bottom: 10px;
-        /* padding: 10px; */
       }
       section{
-        /* padding-top: -40px; */
         margin-bottom: 150px;
-           /* overflow-x: hidden; */
       }
     }
      @media only screen and (min-width:375px) and (max-width: 376px){
@@ -145,16 +134,13 @@
           margin-top: -20px;
         }
         #email{
-          /* margin-bottom: 10px; */
           margin-top: -20px;
         }
       .card{
         height: 450px;
       }
       section{
-        /* padding-top: -40px; */
         margin-bottom: 170px;
-           /* overflow-x: hidden; */
       }
       input{
         margin-bottom: 10px;
@@ -165,16 +151,13 @@
           margin-top: -20px;
         }
         #email{
-          /* margin-bottom: 10px; */
           margin-top: -20px;
         }
       .card{
         height: 450px;
       }
       section{
-        /* padding-top: -40px; */
         margin-bottom: 170px;
-        /* overflow-x: hidden; */
       }
       input{
         margin-bottom: 10px;
@@ -185,16 +168,13 @@
           margin-top: -20px;
         }
         #email{
-          /* margin-bottom: 10px; */
           margin-top: -20px;
         }
       .card{
         height: 360px;
       }
       section{
-        /* padding-top: -40px; */
         margin-bottom: 100px;
-           /* overflow-x: hidden; */
       }
       input{
         margin-bottom: 10px;
