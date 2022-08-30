@@ -38,7 +38,7 @@
   
   <script>
   export default {
-    props : ["id"],
+    props : ["prod"],
      data(){
       return{
           brand: '',
