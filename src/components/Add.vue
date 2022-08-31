@@ -25,7 +25,7 @@
                       <label class="form-label">Price</label>
                       <input type="number" class="form-control" v-model="price">
   
-                      <button type="submit" class="btn btn-primary">Save Changes</button>
+                      <button id="submit" type="submit" class="btn btn-primary">Save Changes</button>
                   </form>
         </div>
         <div class="modal-footer">
@@ -71,6 +71,8 @@
   }
   </script>
   
-  <style>
-  
+  <style scoped>
+  #submit{
+    margin-top: 20px;
+  }
   </style>

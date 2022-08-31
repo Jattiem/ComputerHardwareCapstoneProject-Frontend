@@ -85,9 +85,9 @@ export default {
 </script>
 
 <style scoped>
-.search{
-  margin-top: 24px;
-}
+  .search{
+    margin-top: 24px;
+  }
 .dot-spinner {
   --uib-size: 2.8rem;
   --uib-speed: 0.9s;
@@ -212,6 +212,7 @@ button:active {
 }
 .page-link {
   color: rgba(0, 0, 0, 0.795);
+  /* background-color: gray; */
 }
 h2 {
   margin-top: 160px;
@@ -231,6 +232,8 @@ nav {
 }
 section {
   margin-top: 100px;
+  /* padding-bottom: 100px; */
+  /* margin-bottom: 150px; */
 }
 .products {
   background-color: #ffffff;

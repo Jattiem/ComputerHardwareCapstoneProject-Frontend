@@ -17,9 +17,9 @@
           <th>ID</th>
           <th>Brand</th>
           <th>Model</th>
+          <th>Image</th>
           <th>Category</th>
           <th>Description</th>
-          <!-- <th>Image</th> -->
           <th>Price</th>
           <th>Edit</th>
           <th>Delete</th>
@@ -30,16 +30,19 @@
           <td>{{ product.id }}</td>
           <td>{{ product.brand }}</td>
           <td>{{ product.Model }}</td>
+          <td><img :src="product.img" class="img-fluid"/></td>
           <td>{{ product.category }}</td>
           <td class="des" style="width: 20rem">{{ product.description }}</td>
-          <!-- <td><img :src="product.img" class="img-fluid" alt="" /></td> -->
           <td>R {{ product.price }}</td>
-          <td><a href="" class="iconadmin bi bi-pencil-square"></a></td>
-
           <td>
-            <button id="delete">
-              <a class="iconadmin bi bi-x-square"></a>
+            <a  data-bs-toggle="modal" :data-bs-target="`#editProduct`+product.id" href="" class="iconadmin bi bi-pencil-square"></a>
+            <EditProduct :product="product" />
+          </td>
+          <td>
+            <button   id="delete">
+              <a data-bs-toggle="modal" :data-bs-target="`#deleteProduct`+product.id"  class="iconadmin bi bi-x-square"></a>
             </button>
+            <DeleteProduct :product="product" />
           </td>
         </tr>
       </tbody>
@@ -48,8 +51,10 @@
 </template>
     
     <script>
-import Navbar from "@/components/Navbar.vue";
+import Navbar from "../components/Navbar.vue";
 import Add from "../components/Add.vue";
+import DeleteProduct from '../components/DeleteProduct.vue';
+import EditProduct  from  '../components/EditProduct.vue';
 export default {
   props: ["product"],
   mounted() {
@@ -66,7 +71,7 @@ export default {
       return this.$store.state.user;
     },
   },
-  components: { Navbar, Add },
+  components: { Navbar, Add , DeleteProduct,EditProduct},
 };
 </script>
     
@@ -101,6 +106,7 @@ section {
   margin-top: 100px;
   margin-left: 20px;
   margin-right: 20px;
+  margin-bottom: 150px;
 }
 img {
   width: 8rem;

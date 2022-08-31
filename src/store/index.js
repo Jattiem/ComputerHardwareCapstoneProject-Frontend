@@ -57,6 +57,13 @@ export default createStore({
 
     // Cart
     /********************************************************************************************************* */
+    async getUserCart(context){
+      let fetched = await fetch('https://computer-hardware-capstone.herokuapp.com/users/' + context.state.user.id + '/cart');
+      let res = await fetched.json();
+      context.commit('setUserCart', res.cart)
+      context.dispatch('getTotalCart')
+    },
+
     addCart(context, payload) {
       const {
         brand,
@@ -187,6 +194,28 @@ export default createStore({
       console.log(res);
       context.commit('setProduct', res.products[0])
     },
+  },
+  getTotalCart(context){
+    let total = 0;
+    toRaw(context.state.cart).forEach(product => {
+      total = total + product.price
+    });
+    context.commit('setTotal', total)
+  },
+  deleteCart(context){
+    fetch('https://computer-hardware-capstone.herokuapp.com/users/' + context.state.user.id + '/cart', {
+    method: 'DELETE'
+    })
+    .then((res) => res.json())
+    .then((data) =>{
+      if (data.result == 'There is no user with that ID') {
+        alert(data.result)
+      } else {
+        alert(
+          'The purchase of ' + context.state.user.fullname + ' with a total of R' + Math.round((context.state.total + Number.EPSILON)*100)/100)
+        context.dispatch('getUserCart')
+      }
+    })
   },
   /****************************************************************************************** */
   modules: {}

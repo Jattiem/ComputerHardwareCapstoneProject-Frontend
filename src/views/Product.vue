@@ -27,12 +27,16 @@
         computed: {
             product() {
                 return this.$store.state.product;
-            }
+            },
+            user(){
+        return this.$store.state.user
+      }
         },
         mounted() {
             this.$store.dispatch("getProduct", this.id);
         },
-        methods: {},
+        methods: {
+      },
         components: { Navbar }
     };
     </script>
