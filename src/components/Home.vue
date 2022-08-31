@@ -5,7 +5,7 @@
             <h2 class="text-center">
               Pc gaming
             </h2>
-        <router-link type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark" to="./products">See More</router-link>
+              <router-link type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark" to="./products">See More</router-link>
         </div> 
     </section>
 </template>
@@ -17,7 +17,7 @@ export default {
 
 <style scoped>
 h2{
-    color: white;
+    color: white; 
 }
 .home {
   background: url(https://i.postimg.cc/05z4rb8h/52-520290-rgb-live-wallpaper-pc.jpg),

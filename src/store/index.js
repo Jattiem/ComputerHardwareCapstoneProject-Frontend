@@ -49,6 +49,21 @@ export default createStore({
       })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
+        alert(data.msg)
+        context.dispatch('getProducts')
+      });
+    },
+    async editProduct(context, payload) {
+      fetch('https://computer-hardware-capstone.herokuapp.com/products/' + payload.id, {
+          method: 'PUT',
+          body: JSON.stringify(payload),
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+          }
+        })
+        .then((res) => res.json())
+        .then((data) => {
           console.log(data);
           alert(data.msg)
           context.dispatch('getProducts')
@@ -101,11 +116,20 @@ export default createStore({
     /***************************************************************************************************************** */
     // delete product
     async deleteProduct(context, payload) {
-      fetch('https://computer-hardware-capstone.herokuapp.com/products/' + payload, {
-          method: 'DELETE'
+      console.log(payload.id);
+      fetch('http://localhost:5000/products/' + payload.id, {
+      // fetch('https://computer-hardware-capstone.herokuapp.com/products/' + payload.id, {
+          method: 'DELETE',
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+          },
         })
         .then((res) => res.json())
-        .then((data) => context.dispatch('getProducts'))
+        .then((data) => 
+        {
+          console.log(data)
+          context.dispatch('getProducts')
+        })
     },
     /******************************************************************************************************************* */
     /******************************************************************************************************************************************* */
@@ -169,17 +193,6 @@ export default createStore({
     },
     /****************************************************************************************** */
 
-    async editProduct(context, payload) {
-      fetch('https://computer-hardware-capstone.herokuapp.com/products/' + payload.id, {
-          method: 'PUT',
-          body: JSON.stringify(payload),
-          headers: {
-            'Content-type': 'application/json; charset=UTF-8'
-          }
-        })
-        .then((res) => res.json())
-        .then((data) => context.dispatch('getProducts'));
-    },
     /***************************************************************************************** */
     async getProducts(context) {
       let fetched = await fetch('https://computer-hardware-capstone.herokuapp.com/products');

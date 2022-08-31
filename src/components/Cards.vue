@@ -46,8 +46,7 @@
               <button id="viewproduct" class="btn btn-dark text-black w-5">
                 View
               </button>
-              <br />
-              <button id="add" class="btn btn-dark text-black">Cart</button>
+              <br /> 
             </router-link>
           </div>
         </div>
@@ -239,7 +238,7 @@ section {
   background-color: #ffffff;
 }
 .card {
-  height: 420px;
+  height:380px;
   width: 250px;
   margin-bottom: 10px;
 }

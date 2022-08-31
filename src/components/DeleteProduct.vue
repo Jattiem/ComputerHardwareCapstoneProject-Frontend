@@ -9,7 +9,7 @@
                 <div class="modal-body">
                     <h3>Are you sure you want to delete this item?</h3>
                     <button id="cancel" data-bs-dismiss="modal" class="btn btn-primary">CANCEL</button>
-                    <button class="btn btn-danger" @click="deleteProduct">DELETE</button>
+                    <button class="btn btn-danger" @click="deleteProduct" data-bs-dismiss="modal">DELETE</button>
                 </div>
             </div>
         </div>
@@ -20,8 +20,8 @@ export default {
     props:['product'],
     methods:{
         deleteProduct(){
-            this.$store.dispatch('deleteProduct',this.product.id);
-            document.getElementById(`deleteProductClose`+this.product.id).click();
+            this.$store.dispatch('deleteProduct',this.product);
+            
         }
     }
 }

@@ -6,7 +6,7 @@
           <div class="col-12 col-lg-9 col-xl-7">
             <div class="card shadow-2-strong card-registration" style="border-radius: 10px;">
               <div class="card-body">
-                <h3 class="pb-3">Registration Form</h3>
+                <h3 class="pb-3">Register</h3>
                 <form @submit.prevent="register" method="POST">
                   <div class="row">
                     <div class="col-md-6 mb-4">

@@ -42,6 +42,11 @@
     </script>
     
     <style scoped>
+      .card {
+  background: rgb(236, 236, 236);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
     button {
      color: #090909;
      padding: 0.7em 1.7em;
@@ -71,6 +76,7 @@
       margin-right: auto;
       width: 300px;
       /* height: 300px; */
+      border-radius: 10px;
     }
     .card-title{
       padding-bottom: 1px;

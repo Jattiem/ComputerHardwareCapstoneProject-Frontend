@@ -4,7 +4,9 @@
             <ul class="wrapper">
   <li class="icon facebook">
     <span class="tooltip">Facebook</span>
-    <span><i class="bi bi-facebook"></i></span>
+    <span>
+      <i class="bi bi-facebook"></i>
+    </span>
   </li>
   <li class="icon instagram">
     <span class="tooltip">Instagram</span>
@@ -12,7 +14,8 @@
   </li>
   <li class="icon github">
     <span class="tooltip">Github</span>
-    <span> <i class="bi bi-github"></i></span>
+    <!-- <a  class="bi bi-github github" href="https://github.com/Jattiem/ComputerHardwareCapstoneProject-Frontend" target="blank"></a> -->
+    <span><i class="bi bi-github"></i></span>
   </li>
   <li class="icon youtube">
     <span class="tooltip">Youtube</span>
@@ -55,7 +58,7 @@
   flex-direction: column;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .wrapper .tooltip {
@@ -130,18 +133,6 @@
   background: #CD201F;
   color: #ffffff;
 }
-
-    /* .icons{
-        padding-top: 15px;
-        font-size: larger;
-    }
-    i:hover{
-        color: black;
-        transition: all 0.3s ease-in-out;
-    }
-    i{
-        padding: 10px;
-    } */
     #footer{
         width: 100%;
         bottom: 0;
