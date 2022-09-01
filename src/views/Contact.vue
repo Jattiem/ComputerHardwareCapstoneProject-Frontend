@@ -47,7 +47,7 @@
                     </div>
                     <br>
                     <div class="text-center row">
-                    <button type="submit" class="btn btn-dark">Submit</button>
+                    <button type="submit" class="btn btn-dark" target="blank">Submit</button>
                 </div>
                 </form>
               </div>

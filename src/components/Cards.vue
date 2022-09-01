@@ -6,8 +6,8 @@
         <div class="col-md-3">
           <label for="sortby">Sort by:</label>
           <select class="form-select" name="sort-by">
-            <option value="Ascending">Ascending</option>
-            <option value="Descending">Descending</option>
+            <option  value="Ascending">Ascending</option>
+            <option  value="Descending">Descending</option>
           </select>
         </div>
         <div class="col-md-3">
@@ -18,7 +18,7 @@
           </select>
         </div>
         <div class="col-md-3">
-          <input class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search"> 
+          <input class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search" v-model="search"> 
         </div>
       </div>
       <div v-if="products" class="row d-flex justify-content-center">
@@ -72,10 +72,24 @@
 <script>
 export default {
   props: ["product"],
+  data(){
+    return{
+      search: ''
+    }
+  },
   computed: {
+    // products() {
+    //   return this.$store.state.products;
+    // },
     products() {
-      return this.$store.state.products;
-    },
+      return this.$store.state.products?.filter(products =>{
+          let Match = true;
+          if (!products.brand.toLowerCase().includes(this.search.toLowerCase())) {
+              Match = false;
+          }
+          return Match
+          })
+        }
   },
   mounted() {
     this.$store.dispatch("getProducts");

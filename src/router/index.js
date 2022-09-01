@@ -9,6 +9,7 @@ import About from '../views/About.vue';
 import Profile from '../views/Profile.vue';
 import Contact from '../views/Contact.vue';
 import Landing from '../views/Landing.vue';
+import cart from '../components/Cart.vue';
 
 const routes = [
   {
@@ -61,6 +62,11 @@ const routes = [
     path: '/landing',
     name: 'landing',
     component: Landing
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: cart
   },
 ]
 

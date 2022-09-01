@@ -7,7 +7,7 @@
                     <button type="button" :id="`deleteProductClose`+product.id" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h3>Are you sure you want to delete this item?</h3>
+                    <h5>Are you sure you want to delete this item?</h5>
                     <button id="cancel" data-bs-dismiss="modal" class="btn btn-primary">CANCEL</button>
                     <button class="btn btn-danger" @click="deleteProduct" data-bs-dismiss="modal">DELETE</button>
                 </div>

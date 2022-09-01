@@ -10,7 +10,7 @@
               <h5 class="card-title1">{{product.Model}}</h5>
               <h5 class="card-title">R{{product.price}}</h5>
               <h5 class="card-title">{{product.description}}</h5> 
-                  <button class="btn btn-dark text-black">Add to Cart</button>
+                  <button class="btn btn-dark text-black" @click="this.$store.dispatch('addCart', product)" target="_blank">Add to Cart</button>
             </div>           
         </div>
         </div>
@@ -36,6 +36,17 @@
             this.$store.dispatch("getProduct", this.id);
         },
         methods: {
+          addCart(){
+        let product = {
+          brand: this.product[0].brand,
+          Model: this.product[0].Model,
+          category: this.product[0].category,
+          description: this.product[0].description,
+          img: this.product[0].img,
+          price: this.product[0].price
+        }
+        this.$store.dispatch('addCart', product, this.user.id)
+      }
       },
         components: { Navbar }
     };
