@@ -182,8 +182,8 @@ export default createStore({
         email,
         password
       } = payload;
-      fetch("http://localhost:5000/users", {
-          method: "PATCH",
+      fetch("http://localhost:5000/users/login", {
+          method: "POST",
           headers: {
             "Content-type": "application/json; charset=UTF-8",
           },

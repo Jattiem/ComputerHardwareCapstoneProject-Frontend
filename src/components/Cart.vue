@@ -1,5 +1,4 @@
 <template>
-    <Navbar/>
 <section  v-if="cart"  class="product">
         <h2 class="h2">Cart</h2>
         <div class="container">
@@ -10,18 +9,20 @@
               <h5 class="card-title1">{{product.Model}}</h5>
               <h5 class="card-title">R{{product.price}}</h5>
               <h5 class="card-title">{{product.description}}</h5> 
-            </div>           
+            </div>
+
         </div>
         </div>
       </section>
-      <div class="" v-else>
+      <div class="empty" v-else>
         <h2>Cart is empty</h2>
     </div>
+    <Navbar/>
   </template>
   
   <script>
   import Cards from '../components/Cards.vue'
-import Navbar from './Navbar.vue'
+    import Navbar from '../components/Navbar.vue'
   export default {
     components:{Cards, Navbar},
       computed:{
@@ -48,6 +49,9 @@ import Navbar from './Navbar.vue'
   </script>
   
   <style scoped>
+    .empty{
+        margin-top: 150px;
+    }
     section{
         padding-top: 200px;
     }
