@@ -39,6 +39,7 @@ export default createStore({
     }
   },
   actions: {
+// ADD PRODUCT
     async addProduct(context, payload) {
       fetch('https://computer-hardware-capstone.herokuapp.com/products', {
         method: 'POST',
@@ -54,6 +55,7 @@ export default createStore({
         context.dispatch('getProducts')
       });
     },
+// EDIT PRODUCT
     async editProduct(context, payload) {
       fetch('https://computer-hardware-capstone.herokuapp.com/products/' + payload.id, {
           method: 'PUT',
@@ -69,16 +71,14 @@ export default createStore({
           context.dispatch('getProducts')
         });
     },
-
-    // Cart
-    /********************************************************************************************************* */
+// GET USER CART
     async getUserCart(context){
       let fetched = await fetch('https://computer-hardware-capstone.herokuapp.com/users/' + context.state.user.id + '/cart');
       let res = await fetched.json();
       context.commit('setUserCart', res.cart)
       context.dispatch('getTotalCart')
     },
-
+// ADD CART
     addCart(context, payload) {
       const {
         brand,
@@ -112,13 +112,11 @@ export default createStore({
           }
         })
     },
-    /****************************************************************************************************************** */
-    /***************************************************************************************************************** */
-    // delete product
+// DELETE PRODUCT
     async deleteProduct(context, payload) {
       console.log(payload.id);
-      fetch('http://localhost:5000/products/' + payload.id, {
-      // fetch('https://computer-hardware-capstone.herokuapp.com/products/' + payload.id, {
+      // fetch('http://localhost:5000/products/' + payload.id, {
+      fetch('https://computer-hardware-capstone.herokuapp.com/products/' + payload.id, {
           method: 'DELETE',
           headers: {
             'Content-type': 'application/json; charset=UTF-8',
@@ -131,9 +129,7 @@ export default createStore({
           context.dispatch('getProducts')
         })
     },
-    /******************************************************************************************************************* */
-    /******************************************************************************************************************************************* */
-    // Register
+// REGISTER
     register(context, payload) {
       const {
         fullname,
@@ -163,9 +159,7 @@ export default createStore({
         });
 
     },
-    /********************************************************************************************** */
-    /********************************************************************************************* */
-    // Login
+// LOGIN
     login: async (context, payload) => {
       const {
         email,
@@ -185,22 +179,20 @@ export default createStore({
         router.push({
           name: "landing"
         })
-        alert('WELCOME')
+        alert('Welcome to PC Gaming')
       } else {
         this.errMsg = `
     error`
       }
     },
-    /****************************************************************************************** */
-
-    /***************************************************************************************** */
+// GET PRODUCTS
     async getProducts(context) {
       let fetched = await fetch('https://computer-hardware-capstone.herokuapp.com/products');
       let res = await fetched.json();
       console.log(res.products);
       context.commit('setProducts', res.products)
     },
-    /******************************************************************************************** */
+// GET PRODUCT
     async getProduct(context, id) {
       let fetched = await fetch('https://computer-hardware-capstone.herokuapp.com/products/' + id);
       let res = await fetched.json();
@@ -208,6 +200,7 @@ export default createStore({
       context.commit('setProduct', res.products[0])
     },
   },
+// GET TOTAL CART
   getTotalCart(context){
     let total = 0;
     toRaw(context.state.cart).forEach(product => {
@@ -215,6 +208,7 @@ export default createStore({
     });
     context.commit('setTotal', total)
   },
+// DELETE CART
   deleteCart(context){
     fetch('https://computer-hardware-capstone.herokuapp.com/users/' + context.state.user.id + '/cart', {
     method: 'DELETE'
@@ -230,6 +224,5 @@ export default createStore({
       }
     })
   },
-  /****************************************************************************************** */
   modules: {}
 })
