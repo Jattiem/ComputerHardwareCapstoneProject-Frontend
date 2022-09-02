@@ -4,6 +4,9 @@
       <router-link class="navbar-brand spin" to="#"
         ><img src="https://i.postimg.cc/mk3ChYhQ/wp9360883.jpg" alt=""
       /></router-link>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul
           class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
@@ -14,7 +17,7 @@
               >Home</router-link
             >
           </li>
-          <li class="nav-item">
+          <li class="nav-item" v-if="user">
             <router-link class="nav-link" to="/products">Products</router-link>
           </li>
           <li class="nav-item">
@@ -40,10 +43,10 @@
               to="/profile"
             ></router-link>
           </div>
-          <div class="shopicon">
+          <div v-if="user" class="shopicon">
               <button
               class="nav-link bi bi-cart-fill"
-              type="button"
+              type="button" data-bs-target="#offcanvasScrolling" data-bs-toggle="offcanvas"
               ></button>
           </div>
         </div>
@@ -51,10 +54,13 @@
     </div>
   </nav>
   <router-view />
+  <CartVue />
 </template>
   
   <script>
+    import CartVue from "./Cart.vue"
 export default {
+  components: {CartVue},
   computed: {
     user() {
       return this.$store.state.user;

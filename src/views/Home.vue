@@ -29,5 +29,4 @@
   background-size: cover;
   background-attachment: fixed; 
 }
-
     </style>

@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <section class="admin">
+  <section class="admin" v-if="user">
     <h2 class="h2 pt-2">Admin</h2>
     <a
       href=""
@@ -48,6 +48,9 @@
       </tbody>
     </table>
   </section>
+  <div v-else>
+    <h4 class="error">Please login to view the admin page</h4>
+  </div>
 </template>
     
     <script>
@@ -76,6 +79,11 @@ export default {
 </script>
     
     <style scoped>
+      .error{
+        margin-top: 350px;
+        display: flex;
+        justify-content: center;
+      }
 .admin {
   min-height: 100vh;
 }

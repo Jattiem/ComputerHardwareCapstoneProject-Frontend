@@ -8,19 +8,9 @@ export default createStore({
     products: null,
     product: null,
     users: null,
-    user: null || {
-      cart: null,
-      dateJoined: "2022-08-29T22:00:00.000Z",
-      email: "yaseenjattiem0000@gmail.com",
-      fullname: "Yaseen Jattiem",
-      id: 4,
-      password: "$2b$10$kh8cEBPRV.u3y7Q8kQwIZegrP4BNbx76WRTXMk1tYCwn8twJpURcO",
-      phonenumber: "0738367533",
-      userRole: "",
-    },
+    user: null,
     token: null,
-    cart: null,
-    total: 0
+    cart: null
 
   },
   getters: {},
@@ -42,12 +32,28 @@ export default createStore({
     },
     setUserCart(state, cart) {
       state.cart = cart
-    },
-    setTotal(state, total) {
-      state.total = total
     }
   },
   actions: {
+    DeleteItem : async (context,product, id) => {
+      console.log(product);
+      id = context.state.users.id;
+      fetch(`http://localhost:5000/users/${id}/cart/${product}`, {
+        method: "DELETE",
+        body :JSON.stringify(product),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          // "x-auth-token": context.state.token,
+        },
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        // if (data != null) {
+          context.dispatch("getUserCart", (id));
+        // }
+      });
+    },
     // ADD PRODUCT
     async addProduct(context, payload) {
       fetch('https://computer-hardware-capstone.herokuapp.com/products', {
@@ -176,6 +182,22 @@ export default createStore({
         });
 
     },
+    // DELETE CART
+  deleteCart(context) {
+    fetch('https://computer-hardware-capstone.herokuapp.com/users/' + context.state.user.id + '/cart', {
+        method: 'DELETE'
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.result == 'There is no user with that ID') {
+          alert(data.result)
+        } else {
+          alert(
+            'Thank you for shopping with PC Gaming')
+          context.dispatch('getUserCart')
+        }
+      })
+  },
     // LOGIN
     login: async (context, payload) => {
       const {
@@ -224,29 +246,6 @@ export default createStore({
       context.commit('setProduct', res.products[0])
     },
   },
-  // GET TOTAL CART
-  getTotalCart(context) {
-    let total = 0;
-    toRaw(context.state.cart).forEach(product => {
-      total = total + product.price
-    });
-    context.commit('setTotal', total)
-  },
-  // DELETE CART
-  deleteCart(context) {
-    fetch('https://computer-hardware-capstone.herokuapp.com/users/' + context.state.user.id + '/cart', {
-        method: 'DELETE'
-      })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.result == 'There is no user with that ID') {
-          alert(data.result)
-        } else {
-          alert(
-            'The purchase of ' + context.state.user.fullname + ' with a total of R' + Math.round((context.state.total + Number.EPSILON) * 100) / 100)
-          context.dispatch('getUserCart')
-        }
-      })
-  },
+  
   modules: {}
 })

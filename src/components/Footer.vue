@@ -14,7 +14,6 @@
   </li>
   <li class="icon github">
     <span class="tooltip">Github</span>
-    <!-- <a  class="bi bi-github github" href="https://github.com/Jattiem/ComputerHardwareCapstoneProject-Frontend" target="blank"></a> -->
     <span><i class="bi bi-github"></i></span>
   </li>
   <li class="icon youtube">

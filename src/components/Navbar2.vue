@@ -62,9 +62,9 @@
       font-weight: bold;
     }
     img{
-      height: 80px;
-      border-radius: 50px;
-    }
+  height: 80px;
+  border-radius: 50px;
+}
     .shopicon{
       font-size: 25px;
       padding-bottom: 16px;

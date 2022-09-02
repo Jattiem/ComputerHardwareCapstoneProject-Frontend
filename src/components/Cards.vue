@@ -30,7 +30,7 @@
           <div class="bg-light">
             <img
               :src="product.img"
-              class="card-img-top img-fluid cards"
+              class="card-img-top img-fluid cards rgb"
               alt="image"
             />
           </div>

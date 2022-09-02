@@ -1,7 +1,7 @@
 <template>
     <Navbar/>
       <section  v-if="product"  class="product">
-        <h2 class="h2">Product</h2>
+        <h2 class="h2 pt-5">Product</h2>
         <div class="container">
         <div class="card bg-light">
           <img :src="product.img" class="card-img-top img-fluid center" alt="image">
