@@ -4,17 +4,6 @@
       <router-link class="navbar-brand spin" to="#"
         ><img src="https://i.postimg.cc/mk3ChYhQ/wp9360883.jpg" alt=""
       /></router-link>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarScroll"
-        aria-controls="navbarScroll"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul
           class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
@@ -52,27 +41,20 @@
             ></router-link>
           </div>
           <div class="shopicon">
-            <router-link to="/cart">
               <button
               class="nav-link bi bi-cart-fill"
               type="button"
               ></button>
-            </router-link>
           </div>
         </div>
       </div>
     </div>
   </nav>
-  <!-- <CartVue /> -->
-  <!-- <CartModal /> -->
   <router-view />
 </template>
   
   <script>
-import CartVue from "./Cart.vue";
-// import CartModal from "./CartModal.vue";
 export default {
-  components: { CartVue },
   computed: {
     user() {
       return this.$store.state.user;
@@ -120,6 +102,7 @@ export default {
 }
 nav {
   padding: 30px;
+  height: 120px;
 }
 nav a {
   font-weight: bold;
@@ -148,6 +131,7 @@ img {
   color: black;
 }
 .personicon {
+  /* padding-top: 10px; */
   font-size: 30px;
 }
 @media only screen and (min-width: 320px),
