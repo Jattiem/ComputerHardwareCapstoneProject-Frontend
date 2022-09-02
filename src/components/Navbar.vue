@@ -4,16 +4,15 @@
       <router-link class="navbar-brand spin" to="#"
         ><img src="https://i.postimg.cc/mk3ChYhQ/wp9360883.jpg" alt=""
       /></router-link>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      <div class="collapse navbar-collapse" id="navbarScroll">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul
-          class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
-          style="--bs-scroll-height: 100px"
+          class="navbar-nav me-auto mb-2 mb-lg-0"
         >
           <li class="nav-item">
-            <router-link class="nav-link" aria-current="page" to="/landing"
+            <router-link class="nav-link"  to="/landing"
               >Home</router-link
             >
           </li>
@@ -24,7 +23,7 @@
             <router-link class="nav-link" to="/contact">Contact</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" aria-current="page" to="/about"
+            <router-link class="nav-link" to="/about"
               >About</router-link
             >
           </li>
@@ -100,15 +99,18 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+nav{
+  background-color: black;
+}
 #nav {
   width: 100%;
   top: 0;
   position: fixed;
-  z-index: 10;
+  z-index: 100;
 }
 nav {
   padding: 30px;
-  height: 120px;
+  height: 100px;
 }
 nav a {
   font-weight: bold;
