@@ -2,7 +2,7 @@ import {
   createStore
 } from 'vuex'
 import router from '@/router'
-const moduleprojectUrl = "https://computer-hardware-capstone.herokuapp.com/";
+// const moduleprojectUrl = "https://computer-hardware-capstone.herokuapp.com/";
 export default createStore({
   state: {
     products: null,
@@ -238,6 +238,9 @@ export default createStore({
           context.state.msg = data.msg;
           context.commit("setUser", data.user);
           context.commit("setToken", data.token);
+          router.push({
+            name: "landing"
+          })
         });
     },
     // GET PRODUCTS

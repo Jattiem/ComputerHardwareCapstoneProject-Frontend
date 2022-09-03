@@ -1,5 +1,5 @@
 <template>
-    <footer id="footer" class="bg-light">
+    <footer id="footer" class="bg-dark">
         <div class="container">
             <ul class="wrapper">
   <li class="icon facebook">
