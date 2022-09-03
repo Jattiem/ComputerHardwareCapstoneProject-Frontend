@@ -38,7 +38,7 @@ export default createStore({
     DeleteItem : async (context,product, id) => {
       console.log(product);
       id = context.state.users.id;
-      fetch(`http://localhost:5000/users/${id}/cart/${product}`, {
+      fetch(`https://computer-hardware-capstone.herokuapp.com/users/${id}/cart/${product}`, {
         method: "DELETE",
         body :JSON.stringify(product),
         headers: {
@@ -95,7 +95,7 @@ export default createStore({
 
     // GET USER CART
     async getUserCart(context) {
-      let fetched = await fetch('http://localhost:5000/users/' + context.state.user.id + '/cart');
+      let fetched = await fetch('https://computer-hardware-capstone.herokuapp.com/users/' + context.state.user.id + '/cart');
       // let fetched = await fetch('https://computer-hardware-capstone.herokuapp.com/users/' + context.state.user.id + '/cart');
       let res = await fetched.json();
       console.log(res);
@@ -112,7 +112,7 @@ export default createStore({
         img,
         price
       } = payload
-      fetch('http://localhost:5000/users/' + context.state.user.id + '/cart', {
+      fetch('https://computer-hardware-capstone.herokuapp.com/users/' + context.state.user.id + '/cart', {
       // fetch('https://computer-hardware-capstone.herokuapp.com/users/' + context.state.user.id + '/cart', {
           method: 'POST',
           body: JSON.stringify({
@@ -204,7 +204,7 @@ export default createStore({
         email,
         password
       } = payload;
-      fetch("http://localhost:5000/users/login", {
+      fetch("https://computer-hardware-capstone.herokuapp.com/users/login", {
           method: "POST",
           headers: {
             "Content-type": "application/json; charset=UTF-8",
