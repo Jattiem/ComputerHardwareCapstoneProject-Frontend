@@ -199,37 +199,46 @@ export default createStore({
       })
   },
     // LOGIN
+    // login: async (context, payload) => {
+    //   const {
+    //     email,
+    //     password
+    //   } = payload;
+    //   fetch("https://computer-hardware-capstone.herokuapp.com/users/login", {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-type": "application/json; charset=UTF-8",
+    //       },
+    //       body: JSON.stringify({
+    //         email: email,
+    //         password: password,
+    //       }),
+    //     })
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       console.log(data.user[0]);
+    //       context.commit("setUser", data.user[0])
+    //       router.push({
+    //         name: "landing"
+    //       })
+    //     })
+    // },
     login: async (context, payload) => {
-      const {
-        email,
-        password
-      } = payload;
-      fetch("https://computer-hardware-capstone.herokuapp.com/users/login", {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json; charset=UTF-8",
-          },
-          body: JSON.stringify({
-            email: email,
-            password: password,
-          }),
-        })
+      await fetch("https://computer-hardware-capstone.herokuapp.com/users", {
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          "x-auth-token": context.state.token,
+        },
+      })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data.user[0]);
-          context.commit("setUser", data.user[0])
-          router.push({
-            name: "landing"
-          })
-        })
-
-      //   if (result) {
-      //     alert('Welcome to PC Gaming')
-      //     context.commit("setUser", )
-      //   } else {
-      //     this.errMsg = `
-      // error`
-      //   }
+          // console.log(data);
+          context.state.msg = data.msg;
+          context.commit("setUser", data.user);
+          context.commit("setToken", data.token);
+        });
     },
     // GET PRODUCTS
     async getProducts(context) {
