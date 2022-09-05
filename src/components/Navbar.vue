@@ -71,7 +71,7 @@ export default {
 };
 </script>
   
-  <style>
+  <style scoped>
 .bi-cart-fill {
   border: none;
   background: none;
@@ -83,7 +83,9 @@ export default {
 .logout:hover {
   color: black;
 }
-
+nav{
+        border-bottom: 2px solid red;
+      }
 nav a {
   font-weight: bold;
   color: #2c3e50;

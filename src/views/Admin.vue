@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <section class="admin vh-100" v-if="user">
+  <section class="admin" v-if="user">
     <h2 class="h2 pt-2">Admin</h2>
     <a
       href=""
@@ -79,8 +79,11 @@ export default {
 </script>
     
     <style scoped>
+      section{
+        margin-bottom: 100px;
+      }
       .error{
-        margin-top: 350px;
+        margin-top: 300px;
         display: flex;
         justify-content: center;
       }
@@ -115,12 +118,12 @@ section {
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 150px;
-  background: linear-gradient(   red, blue);
 }
 img {
   width: 8rem;
   border: 1px;
   border-radius: 1px;
+  box-shadow: none;
 }
 .des[data-v-4579cfca] {
   width: 100%;

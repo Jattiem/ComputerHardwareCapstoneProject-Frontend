@@ -20,9 +20,11 @@
     }
     </script>
     
-    <style>
+    <style scoped>
 footer{
   border-top: 2px solid red;
+  width: 100%;
+  bottom: 0;
 }
 .text {
   color: white;
