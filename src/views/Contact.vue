@@ -82,10 +82,6 @@
     .page-link{
       color: rgba(0, 0, 0, 0.795);
     }
-    nav{
-      display: flex;
-      justify-content: center;
-    }
     .card{
       height: 360px;
       border-radius: 10px;

@@ -37,10 +37,12 @@
     },
     methods: {
       login() {
-        this.$store.dispatch("login", {
+        const pay = {
           email: this.email,
           password: this.password,
-        });
+          
+        }
+        this.$store.dispatch("login", pay);
       }
     },
     components: { Navbar2 }

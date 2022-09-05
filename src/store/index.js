@@ -2,7 +2,6 @@ import {
   createStore
 } from 'vuex'
 import router from '@/router'
-// const moduleprojectUrl = "https://computer-hardware-capstone.herokuapp.com/";
 export default createStore({
   state: {
     products: null,
@@ -113,7 +112,6 @@ export default createStore({
         price
       } = payload
       fetch('https://computer-hardware-capstone.herokuapp.com/users/' + context.state.user.id + '/cart', {
-      // fetch('https://computer-hardware-capstone.herokuapp.com/users/' + context.state.user.id + '/cart', {
           method: 'POST',
           body: JSON.stringify({
             brand: brand,
@@ -199,31 +197,9 @@ export default createStore({
       })
   },
     // LOGIN
-    // login: async (context, payload) => {
-    //   const {
-    //     email,
-    //     password
-    //   } = payload;
-    //   fetch("https://computer-hardware-capstone.herokuapp.com/users/login", {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-type": "application/json; charset=UTF-8",
-    //       },
-    //       body: JSON.stringify({
-    //         email: email,
-    //         password: password,
-    //       }),
-    //     })
-    //     .then((res) => res.json())
-    //     .then((data) => {
-    //       console.log(data.user[0]);
-    //       context.commit("setUser", data.user[0])
-    //       router.push({
-    //         name: "landing"
-    //       })
-    //     })
-    // },
     login: async (context, payload) => {
+      console.log(payload);
+      // await fetch("http://localhost:3000/users/login", {
       await fetch("https://computer-hardware-capstone.herokuapp.com/users/login", {
         method: "POST",
         body: JSON.stringify(payload),
@@ -234,7 +210,7 @@ export default createStore({
       })
         .then((res) => res.json())
         .then((data) => {
-          // console.log(data);
+          console.log(data);
           context.state.msg = data.msg;
           context.commit("setUser", data.user);
           context.commit("setToken", data.token);

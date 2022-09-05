@@ -234,10 +234,6 @@ h2 {
   height: 200px;
   width: 150px;
 }
-section {
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
 .products {
   background-color: #ffffff;
 }
@@ -246,11 +242,10 @@ section {
   width: 250px;
   margin-bottom: 10px;
 }
-.h2 {
-  padding-top: 10px;
-}
 .bottom {
   padding-bottom: 150px;
 }
-
+img{
+  box-shadow: none;
+}
 </style>

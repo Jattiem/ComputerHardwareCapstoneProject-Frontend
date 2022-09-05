@@ -94,6 +94,7 @@
       border: 1px;
       border-radius: 1px;
       padding-top: 10px;
+      box-shadow: none;
     }
     section{
       margin-top: 100px;
