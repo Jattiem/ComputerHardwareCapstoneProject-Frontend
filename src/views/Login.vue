@@ -68,7 +68,7 @@ input{
 .card{
   height: 370px;
   border-radius: 10px;
-  box-shadow: 5px 5px 5px white;
+  box-shadow: 3px 3px 3px 3px white;
 }
 .page-link{
   color: rgba(0, 0, 0, 0.795);

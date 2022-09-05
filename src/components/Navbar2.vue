@@ -5,7 +5,7 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">PC GAMING</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -35,14 +35,18 @@
     </script>
     
     <style scoped>
+      #offcanvasNavbarLabel{
+        color: white;
+      }
+
       nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: black;
   text-decoration: none;
   padding: 10px;
 }
 nav a.router-link-exact-active {
-  color: black;
+  color: red;
   font-weight: bold;
 }
       nav{

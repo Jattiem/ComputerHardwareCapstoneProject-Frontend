@@ -90,7 +90,7 @@
   .card{
     height: 320px;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px white;
+    box-shadow: 3px 3px 3px 3px white;
 }
   .container{
     padding-top: 170px;
@@ -146,7 +146,7 @@
 }
 @media only screen and (min-width:768px) and (max-width: 769px){
   section{
-    margin-bottom: 140px;
+    margin-bottom: 130px;
     margin-top: -30px;
   }
   .card{
