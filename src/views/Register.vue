@@ -75,6 +75,7 @@
 <style scoped>
   section{
     scroll-behavior: smooth;
+    overflow-x: hidden;
     background: linear-gradient(   red, blue);
 }
   .input{
@@ -104,56 +105,55 @@
     height: 440px;
   }
   .input{
-    
+    width: 240px;
   }
 }
 @media only screen and (min-width:320px) and (max-width: 321px){
   section{
-    overflow-x: hidden;
-     margin-top: -45px;
+    margin-bottom: 140px;
+    margin-top: -30px;
   }
   .card{
-    height: 350px;
+    height: 440px;
   }
-  button{
-    width: 91%;
-    margin-left: 12px;
+  .input{
+    width: 260px;
   }
 }
 @media only screen and (min-width:375px) and (max-width: 376px){
   section{
-    overflow-x: hidden;
-     margin-top: -45px;
+    margin-bottom: 140px;
+    margin-top: -30px;
   }
   .card{
-    height: 350px;
+    height: 440px;
   }
-  button{
-    width: 92%;
-    margin-left: 12px;
+  .input{
+    width: 320px;
   }
 }
 @media only screen and (min-width:425px) and (max-width: 426px){
   section{
-    overflow-x: hidden;
-     margin-top: -45px;
+    margin-bottom: 140px;
+    margin-top: -30px;
   }
   .card{
-    height: 350px;
+    height: 440px;
   }
-  button{
-    width: 93%;
-    margin-left: 12px;
+  .input{
+    width: 370px;
   }
 }
 @media only screen and (min-width:768px) and (max-width: 769px){
   section{
-     overflow-x: hidden;
-     margin-top: -45px;
+    margin-bottom: 140px;
+    margin-top: -30px;
   }
-  button{
-    width: 96%;
-    margin-left: 12px;
+  .card{
+    height: 440px;
+  }
+  .input{
+    width: 660px;
   }
 }
 
