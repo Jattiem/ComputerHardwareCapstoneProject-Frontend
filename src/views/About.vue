@@ -20,11 +20,10 @@
       color: rgba(0, 0, 0, 0.795);
     }
     section{
-    overflow-x: hidden;
+      background: linear-gradient(   red, blue);
     }
     h2{
-        padding-top: 10px;
-        margin-top: 160px;
+        padding-top: 200px;
     }
     p{
         border: 1px solid gray;
@@ -37,55 +36,6 @@
         padding: 30px;
         border-radius: 10px;
     background: linear-gradient(145deg, #e6e6e6, #ffffff);
-    box-shadow:  10px 10px 10px #cccccc,
-                 -10px -10px 10px #ffffff;
     }
-    nav{
-        display: flex;
-        justify-content: center;
-    }
-      @media only screen and (min-width:300px) and (max-width: 301px){
-      p{
-        width: 200px;
-      }
-      .par{
-        margin-left: 60px;
-      }
-      section{
-        margin-bottom: 135px;
-      }
-    }
-      @media only screen and (min-width:320px) and (max-width: 321px){
-      p{
-        width: 200px;
-      }
-      .par{
-        margin-left: 60px;
-      }
-        section{
-        margin-bottom: 135px;
-      }
-    }
-      @media only screen and (min-width:375px) and (max-width: 376px){
-      p{
-        width: 200px;
-      }
-      .par{
-        margin-left: 90px;
-      }
-        section{
-        margin-bottom: 135px;
-      }
-    }
-      @media only screen and (min-width: 425px) and (max-width: 426px){
-      p{
-        width: 200px;
-      }
-      .par{
-        margin-left: 110px;
-      }
-        section{
-        margin-bottom: 135px;
-      }
-    }
+ 
     </style>

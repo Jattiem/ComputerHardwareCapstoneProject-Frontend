@@ -224,7 +224,7 @@ export default createStore({
     //     })
     // },
     login: async (context, payload) => {
-      await fetch("https://computer-hardware-capstone.herokuapp.com/users", {
+      await fetch("https://computer-hardware-capstone.herokuapp.com/users/login", {
         method: "POST",
         body: JSON.stringify(payload),
         headers: {

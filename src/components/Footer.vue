@@ -1,5 +1,5 @@
 <template>
-    <footer id="footer" class="bg-dark">
+    <footer id="footer" class="bg-dark fixed-bottom">
         <div class="container">
           <div class="rounded-social-buttons">
                     <a class="social-button facebook" href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>

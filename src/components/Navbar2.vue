@@ -11,7 +11,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
           <li class="nav-item">
             <router-link class="nav-link" aria-current="page" to="/">Home</router-link>
           </li>
@@ -34,7 +34,7 @@
     }
     </script>
     
-    <style scoped>
+    <style>
       nav a {
   font-weight: bold;
   color: #2c3e50;
@@ -49,10 +49,10 @@ nav a.router-link-exact-active {
         border-bottom: 2px solid red;
       }
       img {
-  height: 80px;
-  width: 80px;
-  object-fit: cover;
-  height: 80px;
+      height: 80px;
+      width: 80px;
+      object-fit: cover;
+      height: 80px;
       border-radius: 50px;
       box-shadow: 3px 3px 3px red;
 }

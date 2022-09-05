@@ -54,9 +54,7 @@
     }
 img{
       object-fit: cover;
-      /* height: 200px; */
       width: 150px;
-      /* align-items: center; */
       margin-left: 5px;
       border: 1px;
       border-radius: 1px;
@@ -77,7 +75,6 @@ img{
     padding: 10px 10px 10px 10px;
     width: 200px;
     border: 1px;
-    /* border-radius: 1px; */
     background: linear-gradient(315deg, #dadada, #ffffff);
     box-shadow:  10px 10px 30px #bababa;
     margin: 0 !important;

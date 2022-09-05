@@ -1,6 +1,6 @@
 <template>
     <Navbar/>
-      <section  v-if="product"  class="product">
+      <section  v-if="product"  class="product vh-100">
         <h2 class="h2 pt-5">Product</h2>
         <div class="container">
         <div class="card bg-light">
@@ -74,10 +74,6 @@
      box-shadow: inset 4px 4px 12px #c5c5c5,
                  inset -4px -4px 12px #ffffff;
     }
-    nav{
-      display: flex;
-      justify-content: center;
-    }
     .page-link{
       color: rgba(0, 0, 0, 0.795);
     }
@@ -86,7 +82,6 @@
       margin-left: auto;
       margin-right: auto;
       width: 300px;
-      /* height: 300px; */
       border-radius: 10px;
     }
     .card-title{
@@ -94,9 +89,7 @@
     }
     img{
       object-fit: cover;
-      /* height: 200px; */
       width: 150px;
-      /* align-items: center; */
       margin-left: 75px;
       border: 1px;
       border-radius: 1px;
@@ -105,6 +98,7 @@
     section{
       margin-top: 100px;
       margin-bottom: 150px;
+      scroll-behavior: smooth;
     }
     .h2{
       padding-top: 10px

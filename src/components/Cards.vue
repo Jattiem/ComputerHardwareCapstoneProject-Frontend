@@ -78,9 +78,6 @@ export default {
     }
   },
   computed: {
-    // products() {
-    //   return this.$store.state.products;
-    // },
     products() {
       return this.$store.state.products?.filter(products =>{
           let Match = true;
@@ -224,17 +221,11 @@ button:active {
   height: 50px;
 }
 .page-link {
-  color: rgba(0, 0, 0, 0.795);
-  /* background-color: gray; */
+  color: rgba(0, 0, 0, 0.795);  
 }
 h2 {
   margin-top: 160px;
 }
-nav {
-  display: flex;
-  justify-content: center;
-}
-
 .cards {
   padding-top: 10px;
   object-fit: contain;
@@ -245,8 +236,7 @@ nav {
 }
 section {
   margin-top: 100px;
-  /* padding-bottom: 100px; */
-  /* margin-bottom: 150px; */
+  margin-bottom: 100px;
 }
 .products {
   background-color: #ffffff;

@@ -1,6 +1,6 @@
 <template>
     <Navbar/>
-      <section style="background-color: #eee;">
+      <section class="vh-100" style="background-color: #eee;">
       <div class="container">
         <h2 class="text-center">Profile</h2>
         <div class="row">
@@ -86,5 +86,6 @@
     <style scoped>
     section{
         padding-top: 140px;
+        background: linear-gradient(   red, blue);
     }
     </style>

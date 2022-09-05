@@ -1,6 +1,6 @@
 <template>
     <Navbar/>
-     <section class="vh-100 gradient-custom">
+     <section class="vh-100 gradient-custom vh-100">
       <div class="container">
         <div class="row justify-content-center align-items-center h-100">
           <div class="col-12 col-lg-9 col-xl-7">
@@ -76,6 +76,7 @@
     
     <style scoped>
     section{
+      background: linear-gradient(   red, blue);
       overflow-x: hidden;
     }
     .page-link{
@@ -89,95 +90,8 @@
       height: 360px;
       border-radius: 10px;
     background: linear-gradient(145deg, #e6e6e6, #ffffff);
-    box-shadow:  10px 10px 10px #cccccc,
-                 -10px -10px 10px #ffffff;
     }
     .container{
-      margin-top: 170px;
-    }
-      @media only screen and (min-width:300px) and (max-width: 301px){
-        #comment{
-          margin-top: -20px;
-        }
-        #email{
-          margin-top: -20px;
-        }
-      .card{
-        height: 440px;
-      }
-      input{
-        margin-bottom: 10px;
-      }
-      section{
-        margin-bottom: 150px;
-      }
-    }
-      @media only screen and (min-width:320px) and (max-width: 321px){
-         #comment{
-          margin-top: -20px;
-        }
-        #email{
-          margin-top: -20px;
-        }
-      .card{
-        height: 450px;
-      }
-      input{
-        margin-bottom: 10px;
-      }
-      section{
-        margin-bottom: 150px;
-      }
-    }
-     @media only screen and (min-width:375px) and (max-width: 376px){
-       #comment{
-          margin-top: -20px;
-        }
-        #email{
-          margin-top: -20px;
-        }
-      .card{
-        height: 450px;
-      }
-      section{
-        margin-bottom: 170px;
-      }
-      input{
-        margin-bottom: 10px;
-      }
-    }
-     @media only screen and (min-width:425px) and (max-width: 426px){
-       #comment{
-          margin-top: -20px;
-        }
-        #email{
-          margin-top: -20px;
-        }
-      .card{
-        height: 450px;
-      }
-      section{
-        margin-bottom: 170px;
-      }
-      input{
-        margin-bottom: 10px;
-      }
-    }
-     @media only screen and (min-width:768px) and (max-width: 769px){
-       #comment{
-          margin-top: -20px;
-        }
-        #email{
-          margin-top: -20px;
-        }
-      .card{
-        height: 360px;
-      }
-      section{
-        margin-bottom: 100px;
-      }
-      input{
-        margin-bottom: 10px;
-      }
+      padding-top: 170px;
     }
     </style>

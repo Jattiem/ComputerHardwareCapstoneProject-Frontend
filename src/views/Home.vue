@@ -19,6 +19,10 @@
     </script>
     
     <style scoped>
+        section{
+            background: linear-gradient(   red, blue);
+            overflow-x: hidden;
+        }
     h2{
         color: white;
     }

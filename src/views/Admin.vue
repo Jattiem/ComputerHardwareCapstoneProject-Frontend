@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <section class="admin" v-if="user">
+  <section class="admin vh-100" v-if="user">
     <h2 class="h2 pt-2">Admin</h2>
     <a
       href=""
@@ -115,6 +115,7 @@ section {
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 150px;
+  background: linear-gradient(   red, blue);
 }
 img {
   width: 8rem;

@@ -1,12 +1,12 @@
 <template>
-    <Navbar2/>
-        <section class="vh-100 gradient-custom">
+  <Navbar2/>
+    <section class="vh-100 gradient-custom">
       <div class="container">
         <div class="row justify-content-center align-items-center h-100">
           <div class="col-12 col-lg-9 col-xl-7">
             <div class="card shadow-2-strong card-registration" style="border-radius: 10px;">
               <div class="card-body">
-                <h3 class="pb-3">Register</h3>
+                <h3 class="pb-4">Register</h3>
                 <form @submit.prevent="register" method="POST">
                   <div class="row">
                     <div class="col-md-6 mb-4">
@@ -42,89 +42,119 @@
         </div>
       </div>
     </section>
-    </template>
+</template>
     
-    <script>
-    import Navbar2 from '@/components/Navbar2.vue';
+<script>
+  import Navbar2 from '@/components/Navbar2.vue';
     export default {
         data() {
-            return {
-                fullname: "",
-                email: "",
-                password: "",
-                phonenumber: "",
-                userRole: "",
-            };
+          return {
+            fullname: "",
+            email: "",
+            password: "",
+            phonenumber: "",
+            userRole: "",
+          };
         },
         methods:{
-    register(){
-      const user = {
-          fullname: this.fullname,
-          email: this.email,
-          password: this.password,
-          phonenumber: this.phonenumber,
-          userRole: this.userRole
-      }
-      this.$store.dispatch('register', user) 
-    }
-  },
+          register(){
+            const user = {
+              fullname: this.fullname,
+              email: this.email,
+              password: this.password,
+              phonenumber: this.phonenumber,
+              userRole: this.userRole
+          }
+        this.$store.dispatch('register', user) 
+}
+},
         components: { Navbar2 }
-    };
-    </script>
+};
+</script>
     
-    <style scoped>
-      section{
-        scroll-behavior: smooth;
-      }
-    .input{
-      width: 97%;
-      margin-left: 10px;
-      height: 45px;
-    }
-    .page-link{
-      color: rgba(0, 0, 0, 0.795);
-      margin-top: -10px;
-    }
-    .card{
-      height: 370px;
-      border-radius: 10px;
-    background: linear-gradient(145deg, #e6e6e6, #ffffff);
-    box-shadow:  10px 10px 10px #cccccc,
-                 -10px -10px 10px #ffffff;
-    }
-    .container{
-      margin-top: 170px;
-    }
-      @media only screen and (min-width:300px) and (max-width: 301px){
-      .card{
-        height: 530px;
-      }
-      section{
-        margin-bottom: 150px;
-      }
-    }
-      @media only screen and (min-width:320px) and (max-width: 321px){
-      .card{
-        height: 520px;
-      }
-      section{
-        margin-bottom: 140px;
-      }
-    }
-     @media only screen and (min-width:375px) and (max-width: 376px){
-      .card{
-        height: 520px;
-      }
-      section{
-        margin-bottom: 140px;
-      }
-    }
-     @media only screen and (min-width:425px) and (max-width: 426px){
-      .card{
-        height: 520px;
-      }
-      section{
-        margin-bottom: 150px;
-      }
-    }
+<style scoped>
+  section{
+    scroll-behavior: smooth;
+    background: linear-gradient(   red, blue);
+}
+  .input{
+    width: 97%;
+    margin-left: 10px;
+    height: 45px;
+}
+  .page-link{
+    color: rgba(0, 0, 0, 0.795);
+    margin-top: -10px;
+}
+  .card{
+    height: 320px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px white;
+}
+  .container{
+    padding-top: 170px;
+}
+
+@media only screen and (min-width:300px) and (max-width: 301px){
+  section{
+    margin-bottom: 140px;
+    margin-top: -30px;
+  }
+  .card{
+    height: 440px;
+  }
+  .input{
+    
+  }
+}
+@media only screen and (min-width:320px) and (max-width: 321px){
+  section{
+    overflow-x: hidden;
+     margin-top: -45px;
+  }
+  .card{
+    height: 350px;
+  }
+  button{
+    width: 91%;
+    margin-left: 12px;
+  }
+}
+@media only screen and (min-width:375px) and (max-width: 376px){
+  section{
+    overflow-x: hidden;
+     margin-top: -45px;
+  }
+  .card{
+    height: 350px;
+  }
+  button{
+    width: 92%;
+    margin-left: 12px;
+  }
+}
+@media only screen and (min-width:425px) and (max-width: 426px){
+  section{
+    overflow-x: hidden;
+     margin-top: -45px;
+  }
+  .card{
+    height: 350px;
+  }
+  button{
+    width: 93%;
+    margin-left: 12px;
+  }
+}
+@media only screen and (min-width:768px) and (max-width: 769px){
+  section{
+     overflow-x: hidden;
+     margin-top: -45px;
+  }
+  button{
+    width: 96%;
+    margin-left: 12px;
+  }
+}
+
     </style>

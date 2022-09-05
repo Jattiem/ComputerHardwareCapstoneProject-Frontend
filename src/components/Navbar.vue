@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar bg-dark fixed-top">
   <div class="container-fluid">
-    <router-link class="navbar-brand"  to="/"><img src="https://i.postimg.cc/mk3ChYhQ/wp9360883.jpg" alt=""></router-link>
+    <router-link class="navbar-brand"  to="/landing"><img src="https://i.postimg.cc/mk3ChYhQ/wp9360883.jpg" alt=""></router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,14 +24,13 @@
           <li class="nav-item">
             <router-link class="nav-link"  to="/about">About</router-link>
           </li>
-          <li class="nav-item " v-if="user">
+          <li class="nav-item" v-if="user">
             <router-link class="nav-link"  to="/admin">Admin</router-link>
           </li>
+          <li class="nav-item">
+            <router-link class="nav-link"  to="/login">Logout</router-link>
+          </li>
         </ul>
-        <form class="d-flex search" role="search">
-          <router-link class="logout" to="/">Logout</router-link>
-          <br />
-        </form>
         <div class="dicons">
           <div class="personicon">
             <router-link
@@ -39,7 +38,7 @@
               to="/profile"
             ></router-link>
           </div>
-          <div v-if="user" class="shopicon">
+          <div class="shopicon" v-if="user">
               <button
               class="nav-link bi bi-cart-fill"
               type="button" data-bs-target="#offcanvasScrolling" data-bs-toggle="offcanvas"
@@ -72,7 +71,7 @@ export default {
 };
 </script>
   
-  <style scoped>
+  <style>
 .bi-cart-fill {
   border: none;
   background: none;
