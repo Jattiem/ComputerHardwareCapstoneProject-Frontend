@@ -90,4 +90,8 @@
     .container{
       padding-top: 170px;
     }
+    button{
+      width: 97%;
+      margin-left: 10px;
+    }
     </style>
