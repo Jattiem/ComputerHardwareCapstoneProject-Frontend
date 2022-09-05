@@ -54,49 +54,9 @@
   </script>
   
   <style scoped>
-  @media only screen and (min-width:300px) and (max-width: 301px){
-    section{
-      margin-bottom: 100px;
-    }
-    .login{
-    width: 90%;
-    margin-left: 10px;
-    height: 45px;
-  }
-  }
-  @media only screen and (min-width:320px) and (max-width: 321px){
-    section{
-      margin-bottom: 100px;
-    }
-    .login{
-    width: 91%;
-    margin-left: 11px;
-    height: 45px;
-  }
-  }
-  @media only screen and (min-width:375px) and (max-width: 376px){
-    section{
-      margin-bottom: 100px;
-    }
-    .login{
-    width: 93%;
-    margin-left: 10px;
-    height: 45px;
-  }
-  }
-  @media only screen and (min-width:425px) and (max-width: 426px){
-    section{
-      margin-bottom: 100px;
-    }
-    .login{
-    width: 93%;
-    margin-left: 10px;
-    height: 45px;
-  }
-  }
-  section{
-    overflow-x: hidden; 
-  }
+section{
+        scroll-behavior: smooth;
+      }
   button{
     width: 97%;
     margin-left: 10px;
@@ -114,10 +74,6 @@
   }
   .page-link{
     color: rgba(0, 0, 0, 0.795);
-  }
-  nav{
-    display: flex;
-    justify-content: center;
   }
   h2{
     padding-top: 10px;

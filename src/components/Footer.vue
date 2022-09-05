@@ -1,28 +1,14 @@
 <template>
     <footer id="footer" class="bg-dark">
         <div class="container">
-            <ul class="wrapper">
-  <li class="icon facebook">
-    <span class="tooltip">Facebook</span>
-    <span>
-      <i class="bi bi-facebook"></i>
-    </span>
-  </li>
-  <li class="icon instagram">
-    <span class="tooltip">Instagram</span>
-    <span> <i class="bi bi-instagram"></i></span>
-  </li>
-  <li class="icon github">
-    <span class="tooltip">Github</span>
-    <span><i class="bi bi-github"></i></span>
-  </li>
-  <li class="icon youtube">
-    <span class="tooltip">Youtube</span>
-    <span><i class="bi bi-youtube"></i></span>
-  </li>
-</ul>
+          <div class="rounded-social-buttons">
+                    <a class="social-button facebook" href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a class="social-button linkedin" href="https://www.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    <a class="social-button youtube" href="https://www.youtube.com/" target="_blank"><i class="bi bi-youtube"></i></a>
+                    <a class="social-button github" href="https://github.com/Jattiem/ComputerHardwareCapstoneProject-Frontend" target="_blank"><i class="bi bi-github"></i></a>
+                </div>
             <hr>
-            <div class="pb-2">
+            <div class="pb-2 copyright">
                 Copyright © 2022 All Rights Reserved by Yaseen Jattiem
             </div>
         </div>
@@ -35,106 +21,107 @@
     </script>
     
     <style>
-.wrapper {
-  display: inline-flex;
-  list-style: none;
-  margin-bottom: -7px;
+footer{
+  border-top: 2px solid red;
 }
-
-.wrapper .icon {
-  position: relative;
-  background: #ffffff;
-  border-radius: 50%;
-  padding: 10px;
-  margin: 10px;  
-  margin-top: 20px;
-  width: 50px;
-  height: 50px;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .tooltip {
+.text {
+  color: white;
+  font-size: 20px;
   position: absolute;
-  top: 0;
-  font-size: 14px;
-  background: #ffffff;
-  color: #ffffff;
-  padding: 5px 8px;
-  border-radius: 5px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .tooltip::before {
-  position: absolute;
-  content: "";
-  height: 8px;
-  width: 8px;
-  background: #ffffff;
-  bottom: -3px;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%) rotate(45deg);
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  white-space: nowrap;
 }
 
-.wrapper .icon:hover .tooltip {
-  top: -45px;
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+.svg-inline--fa {
+  vertical-align: -0.200em;
 }
 
-.wrapper .icon:hover span,
-.wrapper .icon:hover .tooltip {
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+.rounded-social-buttons {
+  text-align: center;
+  padding-top: 10px;
 }
 
-.wrapper .facebook:hover,
-.wrapper .facebook:hover .tooltip,
-.wrapper .facebook:hover .tooltip::before {
-  background: #1877F2;
-  color: #ffffff;
+.rounded-social-buttons .social-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 3.125rem;
+  height: 3.125rem;
+  border: 0.125rem solid transparent;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  color: #fefefe;
+  font-size: 1.5625rem;
+  font-weight: normal;
+  line-height: 2em;
+  border-radius: 1.6875rem;
+  transition: all 0.5s ease;
+  margin-right: 0.40rem;
+  margin-bottom: 0.25rem;
 }
 
-.wrapper .twitter:hover,
-.wrapper .twitter:hover .tooltip,
-.wrapper .twitter:hover .tooltip::before {
-  background: #1DA1F2;
-  color: #ffffff;
+.rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
 }
 
-.wrapper .instagram:hover,
-.wrapper .instagram:hover .tooltip,
-.wrapper .instagram:hover .tooltip::before {
-  background: #E4405F;
-  color: #ffffff;
+.rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-youtube, .fa-instagram {
+  font-size: 25px;
 }
 
-.wrapper .github:hover,
-.wrapper .github:hover .tooltip,
-.wrapper .github:hover .tooltip::before {
-  background: #333333;
-  color: #ffffff;
+.rounded-social-buttons .social-button.facebook {
+  background: #3b5998;
 }
 
-.wrapper .youtube:hover,
-.wrapper .youtube:hover .tooltip,
-.wrapper .youtube:hover .tooltip::before {
-  background: #CD201F;
-  color: #ffffff;
+.rounded-social-buttons .social-button.facebook:hover, .rounded-social-buttons .social-button.facebook:focus {
+  color: #3b5998;
+  background: #fefefe;
+  border-color: #3b5998;
 }
+
+.rounded-social-buttons .social-button.linkedin {
+  background: #007bb5;
+}
+
+.rounded-social-buttons .social-button.linkedin:hover, .rounded-social-buttons .social-button.linkedin:focus {
+  color: #007bb5;
+  background: #fefefe;
+  border-color: #007bb5;
+}
+
+.rounded-social-buttons .social-button.youtube {
+  background: #bb0000;
+}
+
+.rounded-social-buttons .social-button.youtube:hover, .rounded-social-buttons .social-button.youtube:focus {
+  color: #bb0000;
+  background: #fefefe;
+  border-color: #bb0000;
+}
+
+.rounded-social-buttons .social-button.github {
+  background: rgb(27, 22, 22);
+}
+
+.rounded-social-buttons .social-button.github:hover, .rounded-social-buttons .social-button.github:focus {
+  color: rgb(43, 39, 39);
+  background: #fefefe;
+  border-color: rgb(43, 39, 39);
+}
+
     #footer{
         width: 100%;
         bottom: 0;
-        position: fixed;
     }
+    hr{
+      color: white;
+    }
+.copyright{
+  color: white;
+}
     </style>

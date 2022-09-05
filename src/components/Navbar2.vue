@@ -35,9 +35,25 @@
     </script>
     
     <style scoped>
-    img{
-      height: 80px;
+      nav a {
+  font-weight: bold;
+  color: #2c3e50;
+  text-decoration: none;
+  padding: 10px;
+}
+nav a.router-link-exact-active {
+  color: black;
+  font-weight: bold;
+}
+      nav{
+        border-bottom: 2px solid red;
+      }
+      img {
+  height: 80px;
+  width: 80px;
+  object-fit: cover;
+  height: 80px;
       border-radius: 50px;
       box-shadow: 3px 3px 3px red;
-    }
+}
     </style>

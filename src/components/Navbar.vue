@@ -1,34 +1,31 @@
 <template>
-  <nav id="nav" class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-      <router-link class="navbar-brand spin" to="#"
-        ><img src="https://i.postimg.cc/mk3ChYhQ/wp9360883.jpg" alt=""
-      /></router-link>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar bg-dark fixed-top">
+  <div class="container-fluid">
+    <router-link class="navbar-brand"  to="/"><img src="https://i.postimg.cc/mk3ChYhQ/wp9360883.jpg" alt=""></router-link>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-        <div class="collapse navbar-collapse bg-light " id="navbarSupportedContent">
-        <ul
-          class="navbar-nav me-auto mb-2 mb-lg-0"
-        >
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">PC GAMING</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <router-link class="nav-link"  to="/landing"
-              >Home</router-link
-            >
+            <router-link class="nav-link" aria-current="page" to="/landing">Home</router-link>
           </li>
           <li class="nav-item" v-if="user">
-            <router-link class="nav-link" to="/products">Products</router-link>
+            <router-link class="nav-link"  to="/products">Products</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/contact">Contact</router-link>
+            <router-link class="nav-link"  to="/contact">Contact</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/about"
-              >About</router-link
-            >
+            <router-link class="nav-link"  to="/about">About</router-link>
           </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/admin">Admin</router-link>
+          <li class="nav-item " v-if="user">
+            <router-link class="nav-link"  to="/admin">Admin</router-link>
           </li>
         </ul>
         <form class="d-flex search" role="search">
@@ -51,7 +48,8 @@
         </div>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
   <router-view />
   <CartVue />
 </template>
@@ -74,7 +72,7 @@ export default {
 };
 </script>
   
-  <style>
+  <style scoped>
 .bi-cart-fill {
   border: none;
   background: none;
@@ -86,32 +84,7 @@ export default {
 .logout:hover {
   color: black;
 }
-.spin {
-  transition: all 0.3s ease-in-out;
-}
-.spin:hover {
-  transform: rotate(-20deg);
-}
-#app {
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-nav{
-  background-color: black;
-}
-#nav {
-  width: 100%;
-  top: 0;
-  position: fixed;
-  z-index: 100;
-}
-nav {
-  padding: 30px;
-  height: 100px;
-}
+
 nav a {
   font-weight: bold;
   color: #2c3e50;
@@ -125,8 +98,10 @@ nav a.router-link-exact-active {
 img {
   height: 80px;
   width: 80px;
-  border-radius: 50px;
   object-fit: cover;
+  height: 80px;
+      border-radius: 50px;
+      box-shadow: 3px 3px 3px red;
 }
 .shopicon {
   font-size: 25px;
@@ -139,44 +114,6 @@ img {
   color: black;
 }
 .personicon {
-  /* padding-top: 10px; */
   font-size: 30px;
-}
-@media only screen and (min-width: 320px),
-  (min-width: 375px) and (max-width: 321px),
-  (max-width: 376px) {
-  .dicons {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  .shopicon {
-    padding-top: 3px;
-  }
-}
-@media only screen and (min-width: 300px) and (max-width: 301px) {
-  .search {
-    display: none;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 321px) {
-  .search {
-    display: none;
-  }
-}
-@media only screen and (min-width: 375px) and (max-width: 376px) {
-  .search {
-    display: none;
-  }
-}
-@media only screen and (min-width: 425px) and (max-width: 426px) {
-  .search {
-    display: none;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 769px) {
-  .search {
-    display: none;
-  }
 }
 </style>

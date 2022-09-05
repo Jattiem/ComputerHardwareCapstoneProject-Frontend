@@ -73,10 +73,9 @@
     </script>
     
     <style scoped>
-
-    section{
-      overflow-x: hidden; 
-    }
+      section{
+        scroll-behavior: smooth;
+      }
     .input{
       width: 97%;
       margin-left: 10px;
@@ -85,10 +84,6 @@
     .page-link{
       color: rgba(0, 0, 0, 0.795);
       margin-top: -10px;
-    }
-    nav{
-      display: flex;
-      justify-content: center;
     }
     .card{
       height: 370px;
