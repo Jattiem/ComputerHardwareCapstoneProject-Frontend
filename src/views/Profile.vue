@@ -85,6 +85,8 @@
     
     <style scoped>
     section{
+      padding-left: 10px;
+  padding-right: 10px;
         padding-top: 140px;
         background: linear-gradient(   red, blue);
     }

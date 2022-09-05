@@ -77,7 +77,6 @@
     <style scoped>
     section{
       background: linear-gradient(   red, blue);
-      overflow-x: hidden;
     }
     .page-link{
       color: rgba(0, 0, 0, 0.795);

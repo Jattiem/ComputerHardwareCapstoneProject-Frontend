@@ -17,7 +17,7 @@ export default {
 
 <style scoped>
 section{
-  overflow-x: hidden;
+
 }
 h2{
     color: white; 

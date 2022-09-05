@@ -1,5 +1,5 @@
 <template>
-  <section class="products vh-100">
+  <section class="products">
     <h2 class="h2">Products</h2>
     <div class="container">
       <div class="row sort">
@@ -256,5 +256,8 @@ h2 {
 }
 img{
   box-shadow: none;
+}
+section{
+  scroll-behavior: smooth;
 }
 </style>

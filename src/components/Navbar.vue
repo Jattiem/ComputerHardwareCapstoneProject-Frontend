@@ -16,7 +16,7 @@
             <router-link class="nav-link" aria-current="page" to="/landing">Home</router-link>
           </li>
           <li class="nav-item" v-if="user">
-            <router-link class="nav-link"  to="/products">Products</router-link>
+            <router-link class="nav-link" v-if="user" to="/products">Products</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link"  to="/contact">Contact</router-link>
@@ -25,7 +25,7 @@
             <router-link class="nav-link"  to="/about">About</router-link>
           </li>
           <li class="nav-item" v-if="user">
-            <router-link class="nav-link"  to="/admin">Admin</router-link>
+            <router-link class="nav-link" v-if="user"  to="/admin">Admin</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link"  to="/login">Logout</router-link>
@@ -78,6 +78,7 @@ export default {
 .bi-cart-fill {
   border: none;
   background: none;
+  color: white;
 }
 .logout {
   color: black;

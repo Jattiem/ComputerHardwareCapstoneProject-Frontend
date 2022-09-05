@@ -75,7 +75,6 @@
 <style scoped>
   section{
     scroll-behavior: smooth;
-    overflow-x: hidden;
     background: linear-gradient(   red, blue);
 }
   .input{

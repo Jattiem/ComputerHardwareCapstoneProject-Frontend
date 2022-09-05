@@ -41,7 +41,7 @@
 
       nav a {
   font-weight: bold;
-  color: black;
+  color: white;
   text-decoration: none;
   padding: 10px;
 }
