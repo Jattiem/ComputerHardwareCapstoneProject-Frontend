@@ -233,6 +233,15 @@ export default createStore({
       console.log(res);
       context.commit('setProduct', res.products[0])
     },
+    adminPage : (context) => {
+      let users = context.state.users
+      if (users != null) {
+        if (users.userRole === 'admin'){
+          context.state.admin = true
+        }
+        context.dispatch('getUserCart')
+      }
+    }
   },
   
   modules: {}

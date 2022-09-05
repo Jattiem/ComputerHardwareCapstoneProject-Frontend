@@ -89,5 +89,6 @@
   padding-right: 10px;
         padding-top: 140px;
         background: linear-gradient(   red, blue);
+        overflow-x: hidden;
     }
     </style>

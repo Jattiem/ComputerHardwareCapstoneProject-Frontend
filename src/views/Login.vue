@@ -54,6 +54,7 @@
 section{
   scroll-behavior: smooth;
   background: linear-gradient(   red, blue);
+  overflow-x: hidden;
 }
 button{
   width: 97%;

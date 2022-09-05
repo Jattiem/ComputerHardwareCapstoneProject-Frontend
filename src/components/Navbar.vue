@@ -5,7 +5,7 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas offcanvas-start bg-dark" data-bs-scroll="true" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">PC GAMING</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -24,8 +24,8 @@
           <li class="nav-item">
             <router-link class="nav-link"  to="/about">About</router-link>
           </li>
-          <li class="nav-item" v-if="user">
-            <router-link class="nav-link" v-if="user"  to="/admin">Admin</router-link>
+          <li class="nav-item" v-if="admin">
+            <router-link class="nav-link"   to="/admin">Admin</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link"  to="/login">Logout</router-link>

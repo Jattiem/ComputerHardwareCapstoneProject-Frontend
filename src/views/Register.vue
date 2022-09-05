@@ -76,6 +76,7 @@
   section{
     scroll-behavior: smooth;
     background: linear-gradient(   red, blue);
+    overflow-x: hidden;
 }
   .input{
     width: 97%;
