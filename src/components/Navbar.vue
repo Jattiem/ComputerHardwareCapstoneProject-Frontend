@@ -24,8 +24,8 @@
           <li class="nav-item">
             <router-link class="nav-link"  to="/about">About</router-link>
           </li>
-          <li class="nav-item" v-if="admin">
-            <router-link class="nav-link"   to="/admin">Admin</router-link>
+          <li class="nav-item" v-if="user">
+            <router-link class="nav-link" v-if="admin" to="/admin">Admin</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link"  to="/login">Logout</router-link>
