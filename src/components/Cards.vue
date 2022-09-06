@@ -64,12 +64,6 @@
         </div>
       </div>
     </div>
-    <nav aria-label="Page navigation example" class="pagination">
-  <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="/home">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="/contact">Next</a></li>
-  </ul>
-</nav>
     <div class="bottom"></div>
   </section>
 </template>
@@ -100,10 +94,6 @@ export default {
 </script>
 
 <style scoped>
-  .pagination{
-    display: flex;
-    justify-content: center;
-  }
   .search{
     margin-top: 24px;
   }

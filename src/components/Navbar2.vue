@@ -35,6 +35,13 @@
     </script>
     
     <style scoped>
+      .navbar{
+        --bs-navbar-toggler-border-color: white;
+        --bs-navbar-toggler-border-radius: 0.380rem;
+      }
+      .navbar-toggler{
+      color: red;
+    }
       #offcanvasNavbarLabel{
         color: white;
       }

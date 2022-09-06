@@ -102,39 +102,65 @@ export default createStore({
       // context.dispatch('getTotalCart')
     },
     // ADD CART
-    addCart(context, payload) {
-      const {
-        brand,
-        Model,
-        category,
-        description,
-        img,
-        price
-      } = payload
+    // addCart(context, payload) {
+    //   const {
+    //     brand,
+    //     Model,
+    //     category,
+    //     description,
+    //     img,
+    //     price
+    //   } = payload
+    //   fetch('https://computer-hardware-capstone.herokuapp.com/users/' + context.state.user.id + '/cart', {
+    //       method: 'POST',
+    //       body: JSON.stringify({
+    //         brand: brand,
+    //         Model: Model,
+    //         category: category,
+    //         description: description,
+    //         img: img,
+    //         price: price
+    //       }),
+    //       headers: {
+    //         'Content-type': 'application/json; charset=UTF-8',
+    //       },
+    //     })
+    //     .then((response) => response.json())
+    //     .then((data) => {
+    //       if (data.results == 'There is no user with that id') {
+    //         alert(data.results)
+    //       } else {
+    //         alert('Item Added')
+    //         context.dispatch('getUserCart')
+    //       }
+    //     })
+    // },
+    addCart(context, payload){
+      const {brand,Model, category, description, img, price} = payload
       fetch('https://computer-hardware-capstone.herokuapp.com/users/' + context.state.user.id + '/cart', {
-          method: 'POST',
-          body: JSON.stringify({
-            brand: brand,
-            Model: Model,
-            category: category,
-            description: description,
-            img: img,
-            price: price
-          }),
-          headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-          },
-        })
-        .then((response) => response.json())
-        .then((data) => {
+      method: 'POST',
+      body: JSON.stringify({
+          brand: brand,
+          Model: Model,
+          category: category,
+          description: description,
+          img: img,
+          price: price
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+      })
+      .then((response) => response.json())
+      .then((data) => {
           if (data.results == 'There is no user with that id') {
             alert(data.results)
           } else {
             alert('Item Added')
             context.dispatch('getUserCart')
           }
-        })
-    },
+    })
+  },
     // DELETE PRODUCT
     async deleteProduct(context, payload) {
       console.log(payload.id);
@@ -233,15 +259,15 @@ export default createStore({
       console.log(res);
       context.commit('setProduct', res.products[0])
     },
-    adminPage : (context) => {
-      let users = context.state.users
-      if (users != null) {
-        if (users.userRole === 'admin'){
-          context.state.admin = true
-        }
-        context.dispatch('getUserCart')
-      }
-    }
+    // adminPage : (context) => {
+    //   let users = context.state.users
+    //   if (users != null) {
+    //     if (users.userRole === 'admin'){
+    //       context.state.admin = true
+    //     }
+    //     context.dispatch('getUserCart')
+    //   }
+    // }
   },
   
   modules: {}
