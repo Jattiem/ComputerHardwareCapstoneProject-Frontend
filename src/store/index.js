@@ -24,6 +24,9 @@ export default createStore({
     setUsers(state, values) {
       state.users = values
     },
+    setUsers(state, users) {
+      state.users = users;
+    },
     setUser(state, user) {
       state.user = user
     },
