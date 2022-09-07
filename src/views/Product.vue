@@ -98,7 +98,7 @@
     }
     section{
       margin-top: 100px;
-      margin-bottom: 150px;
+      margin-bottom: 70px;
       scroll-behavior: smooth;
       overflow-x: hidden;
     }

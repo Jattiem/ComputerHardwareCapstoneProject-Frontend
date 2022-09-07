@@ -11,7 +11,8 @@
           <th class="table__heading">UserRole</th>
           <th class="table__heading">Email</th>
           <th class="table__heading">Phone</th>
-          <th class="table__heading">Cart</th>
+          <th class="table__heading">Edit</th>
+          <th class="table__heading">Delete</th>
         </tr>
         <tbody v-if="users">
           <tr class="table__row" v-for="user in users" :key="user" :user="user">
@@ -28,10 +29,12 @@
             <td class="table__content" data-heading="Phone">
               {{ user.phonenumber }}
             </td>
-            <td class="table__content" data-heading="Cart">
-              <button data-bs-toggle="modal" data-bs-target="#cart" class="btn">cart</button>
-              <CartModal :product="product" style="z-index: 1504;"/>
-            </td>
+            <td><a  data-bs-toggle="modal" :data-bs-target="`#editUser`+user.id" href="" class="iconadmin bi bi-pencil-square"></a>
+              <EditUser :user="user" /></td>
+            <td><button   id="delete">
+              <a data-bs-toggle="modal" :data-bs-target="`#deleteUser`+user.id"  class="iconadmin bi bi-x-square"></a>
+            </button>
+            <DeleteUser :user="user" /></td>
           </tr>
         </tbody>
       </table>
@@ -93,8 +96,10 @@ import Navbar from "../components/Navbar.vue";
 import Add from "../components/Add.vue";
 import DeleteProduct from '../components/DeleteProduct.vue';
 import EditProduct  from  '../components/EditProduct.vue';
+import DeleteUser from '../components/DeleteUser.vue';
+import EditUser  from  '../components/EditUser.vue';
 export default {
-  props: ["product"],
+  props: ["product","user"],
   mounted() {
     this.$store.dispatch("getProducts");
     this.$store.dispatch("getUsers");
@@ -110,7 +115,7 @@ export default {
       return this.$store.state.user;
     },
   },
-  components: { Navbar, Add , DeleteProduct,EditProduct},
+  components: { Navbar, Add , DeleteProduct,EditProduct, DeleteUser,EditUser},
 };
 </script>
     

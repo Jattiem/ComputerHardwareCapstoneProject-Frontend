@@ -9,7 +9,7 @@
               <div class="card-body text-center">
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
                   class="rounded-circle img-fluid" style="width: 150px;">
-                <h5 class="my-3">{{user[0].fullname}}</h5>
+                <h5 class="my-3">{{user.fullname}}</h5>
               </div>
             </div>
           </div>
@@ -21,7 +21,7 @@
                     <p class="mb-0">Fullname</p>
                   </div>
                   <div class="col-sm-9">
-                    <p class="text-muted mb-3">{{user[0].fullname}}</p>
+                    <p class="text-muted mb-3">{{user.fullname}}</p>
                   </div>
                 </div>
                 <hr>
@@ -30,7 +30,7 @@
                     <p class="mb-0">Email</p>
                   </div>
                   <div class="col-sm-9">
-                    <p class="text-muted mb-3">{{user[0].email}}</p>
+                    <p class="text-muted mb-3">{{user.email}}</p>
                   </div>
                 </div>
                 <hr>
@@ -39,7 +39,7 @@
                     <p class="mb-0">Phone</p>
                   </div>
                   <div class="col-sm-9">
-                    <p class="text-muted mb-3">{{user[0].phonenumber}}</p>
+                    <p class="text-muted mb-3">{{user.phonenumber}}</p>
                   </div>
                 </div>
                 <hr>

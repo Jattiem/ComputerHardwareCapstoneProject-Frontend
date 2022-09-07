@@ -24,11 +24,11 @@
           <li class="nav-item">
             <router-link class="nav-link"  to="/about">About</router-link>
           </li>
-          <li class="nav-item" v-if="admin">
-            <router-link class="nav-link" to="/admin">Admin</router-link>
+          <li class="nav-item" v-if="user">
+            <router-link v-if="user.userRole != 'user'" class="nav-link" to="/admin">Admin</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link"  to="/login">Logout</router-link>
+            <router-link class="nav-link"  to="/login">Login</router-link>
           </li>
         </ul>
         <div class="dicons row" v-if="user">
@@ -55,7 +55,10 @@
   
   <script>
     import CartVue from "./Cart.vue"
-export default {
+export default {  
+  mounted() {
+    this.$store.commit("setAdmin");
+  },
   components: {CartVue},
   computed: {
     user() {
@@ -68,9 +71,7 @@ export default {
       return this.$store.state.admin;
     },
   },
-  mounted() {
-    this.$store.commit("setAdmin");
-  },
+
 };
 </script>
   
