@@ -94,4 +94,68 @@
       width: 97%;
       margin-left: 10px;
     }
+    h3{
+      color: black;
+    }
+    @media only screen and (min-width:300px) and (max-width: 301px){
+      section{
+        margin-bottom: 140px;
+      }
+      .card{
+        height: 450px;
+      }
+      button{
+        width: 240px;
+      }
+      .col-md-6{
+        padding-bottom: 10px;
+      }
+    }
+    @media only screen and (min-width:320px) and (max-width: 321px){
+      section{
+        margin-bottom: 140px;
+      }
+      .card{
+        height: 450px;
+      }
+      button{
+        width: 260px;
+      }
+      .col-md-6{
+        padding-bottom: 10px;
+      }
+    }
+    @media only screen and (min-width:375px) and (max-width: 376px){
+      section{
+        margin-bottom: 140px;
+      }
+      .card{
+        height: 450px;
+      }
+      button{
+        width: 320px;
+      }
+      .col-md-6{
+        padding-bottom: 10px;
+      }
+    }
+    @media only screen and (min-width:425px) and (max-width: 426px){
+      section{
+        margin-bottom: 140px;
+      }
+      .card{
+        height: 450px;
+      }
+      button{
+        width: 370px;
+      }
+      .col-md-6{
+        padding-bottom: 10px;
+      }
+    }
+    @media only screen and (min-width:768px) and (max-width: 769px){
+      section{
+        margin-bottom: 60px;
+      }
+    }
     </style>

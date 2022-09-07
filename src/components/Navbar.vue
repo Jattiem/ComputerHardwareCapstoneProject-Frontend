@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar bg-dark fixed-top">
   <div class="container-fluid">
-    <router-link class="navbar-brand"  to="/landing"><img src="https://i.postimg.cc/mk3ChYhQ/wp9360883.jpg" alt=""></router-link>
+    <router-link class="navbar-brand"  to="/landing"><img src="https://i.postimg.cc/mk3ChYhQ/wp9360883.jpg" alt="logo"></router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,7 +31,7 @@
             <router-link class="nav-link"  to="/login">Logout</router-link>
           </li>
         </ul>
-        <div class="dicons row">
+        <div class="dicons row" v-if="user">
           <div class="personicon">
             <router-link
               class="nav-link bi bi-person-fill"
@@ -117,7 +117,8 @@ img {
 }
 .shopicon {
   font-size: 25px;
-  padding-bottom: 16px;
+  /* padding-bottom: 16px; */
+  padding-left: 175px;
 }
 .shopicon:hover {
   color: black;
@@ -125,8 +126,12 @@ img {
 .personicon:hover {
   color: black;
 }
+button:hover{
+  color: black;
+}
 .personicon {
   font-size: 30px;
+  padding-right: 30px;
 }
 
 </style>

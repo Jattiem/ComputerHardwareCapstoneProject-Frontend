@@ -2,6 +2,41 @@
   <Navbar />
   <section class="admin" v-if="user">
     <h2 class="h2 pt-2">Admin</h2>
+    <div class="container">
+        <div class="table-responsive">
+      <table class="table">
+        <tr>
+          <th class="table__heading">ID</th>
+          <th class="table__heading">FullName</th>
+          <th class="table__heading">UserRole</th>
+          <th class="table__heading">Email</th>
+          <th class="table__heading">Phone</th>
+          <th class="table__heading">Cart</th>
+        </tr>
+        <tbody v-if="users">
+          <tr class="table__row" v-for="user in users" :key="user" :user="user">
+            <td class="table__content" data-heading="ID">{{ user.id }}</td>
+            <td class="table__content" data-heading="User FullName">
+              {{ user.fullname }}
+            </td>
+            <td class="table__content" data-heading="User Role">
+              {{ user.userRole }}
+            </td>
+            <td class="table__content" data-heading="Email">
+              {{ user.email }}
+            </td>
+            <td class="table__content" data-heading="Phone">
+              {{ user.phonenumber }}
+            </td>
+            <td class="table__content" data-heading="Cart">
+              <button data-bs-toggle="modal" data-bs-target="#cart" class="btn">cart</button>
+              <CartModal :product="product" style="z-index: 1504;"/>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      </div>
     <a
       href=""
       data-bs-toggle="modal"
@@ -62,6 +97,7 @@ export default {
   props: ["product"],
   mounted() {
     this.$store.dispatch("getProducts");
+    this.$store.dispatch("getUsers");
   },
   computed: {
     products() {

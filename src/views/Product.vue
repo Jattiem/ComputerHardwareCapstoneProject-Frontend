@@ -100,6 +100,7 @@
       margin-top: 100px;
       margin-bottom: 150px;
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
     .h2{
       padding-top: 10px

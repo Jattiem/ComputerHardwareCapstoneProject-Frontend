@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar bg-dark fixed-top">
   <div class="container-fluid">
-    <router-link class="navbar-brand"  to="/"><img src="https://i.postimg.cc/mk3ChYhQ/wp9360883.jpg" alt=""></router-link>
+    <router-link class="navbar-brand"  to="/"><img src="https://i.postimg.cc/mk3ChYhQ/wp9360883.jpg" alt="logo"></router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
