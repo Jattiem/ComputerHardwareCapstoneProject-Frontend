@@ -66,7 +66,7 @@ input{
   margin-top: 40px;
 }
 .card{
-  height: 370px;
+  height: 340px;
   border-radius: 10px;
   box-shadow: 3px 3px 3px 3px white;
 }
