@@ -6,7 +6,7 @@
           <div class="col-12 col-lg-9 col-xl-7">
             <div class="card shadow-2-strong card-registration" style="border-radius: 20px;">
               <div class="card-body">
-                <h3 class="pb-1">Login</h3>
+                <h3 class="">Login</h3>
                   <form  @submit.prevent="login" method="POST">
                     <div class="form-outline mb-4">
                       <input autocomplete="on" required  v-model="email" type="email" class="form-control form-control-lg" placeholder="Email Address"/>
@@ -81,6 +81,7 @@ input{
   section{
     overflow-x: hidden;
      margin-top: -45px;
+     margin-bottom: 100px;
   }
   .card{
     height: 350px;
@@ -94,6 +95,7 @@ input{
   section{
     overflow-x: hidden;
      margin-top: -45px;
+     margin-bottom: 100px;
   }
   .card{
     height: 350px;
@@ -107,6 +109,7 @@ input{
   section{
     overflow-x: hidden;
      margin-top: -45px;
+     margin-bottom: 100px;
   }
   .card{
     height: 350px;
@@ -120,6 +123,7 @@ input{
   section{
     overflow-x: hidden;
      margin-top: -45px;
+     margin-bottom: 100px;
   }
   .card{
     height: 350px;
@@ -133,6 +137,7 @@ input{
   section{
      overflow-x: hidden;
      margin-top: -45px;
+     margin-bottom: 70px;
   }
   button{
     width: 96%;

@@ -9,7 +9,8 @@ export default createStore({
     users: null,
     user: null,
     token: null,
-    cart: null
+    cart: null,
+    admin: false,
 
   },
   getters: {},
@@ -31,7 +32,14 @@ export default createStore({
     },
     setUserCart(state, cart) {
       state.cart = cart
-    }
+    },
+    setAdmin(state) {
+      if (state.user != null) {
+        if (state.user.userRole === "admin") {
+          state.admin = true;
+        }
+      }
+    },
   },
   actions: {
     DeleteItem : async (context,product, id) => {

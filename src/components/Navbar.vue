@@ -24,7 +24,7 @@
           <li class="nav-item">
             <router-link class="nav-link"  to="/about">About</router-link>
           </li>
-          <li class="nav-item" v-if="user">
+          <li class="nav-item" v-if="admin">
             <router-link class="nav-link" to="/admin">Admin</router-link>
           </li>
           <li class="nav-item">
@@ -64,9 +64,12 @@ export default {
     cart() {
       return this.$store.state.cart;
     },
+    admin() {
+      return this.$store.state.admin;
+    },
   },
   mounted() {
-    
+    this.$store.commit("setAdmin");
   },
 };
 </script>
