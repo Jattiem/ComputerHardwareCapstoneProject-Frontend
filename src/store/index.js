@@ -266,27 +266,60 @@ export default createStore({
       })
   },
     // LOGIN
-    login: async (context, payload) => {
-      console.log(payload);
-      // await fetch("http://localhost:3000/users/login", {
-      await fetch("https://computer-hardware-capstone.herokuapp.com/users/login", {
-        method: "POST",
-        body: JSON.stringify(payload),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        },
+    // login: async (context, payload) => {
+    //   console.log(payload);
+    //   await fetch("https://computer-hardware-capstone.herokuapp.com/users/login", {
+    //     method: "POST",
+    //     body: JSON.stringify(payload),
+    //     headers: {
+    //       "Content-type": "application/json; charset=UTF-8",
+    //       "x-auth-token": context.state.token,
+    //     },
+    //   })
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       console.log(data);
+    //       context.state.msg = data.msg;
+    //       context.commit("setUser", data.user[0]);
+    //       context.commit("setToken", data.token);
+    //       router.push({
+    //         name: "landing"
+    //       })
+    //     });
+    // },
+    
+    login(context, payload){
+      const { email, password } = payload
+      fetch('ttps://computer-hardware-capstone.herokuapp.com/users/login', {
+      method: 'POST',
+      body: JSON.stringify({
+          email: email,
+          password: password,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
       })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          context.state.msg = data.msg;
-          context.commit("setUser", data.user[0]);
-          context.commit("setToken", data.token);
-          router.push({
-            name: "landing"
-          })
-        });
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.msg == 'Email Not Found. Please register') {
+          alert(data.msg)
+        } else {
+          if (data.msg == 'Password is Incorrect') {
+            alert(data.msg)
+          } else {
+            alert(`Welcome, ${data.user[0].fullname}`)
+            context.commit('setUser',data.user[0])
+            context.commit('setToken',data.token)
+            context.dispatch('getUserCart')
+            setTimeout(()=>{
+              router.push('/landing'), 5000
+            })
+          }
+        }
+
+      });
+
     },
     // GET PRODUCTS
     async getProducts(context) {
