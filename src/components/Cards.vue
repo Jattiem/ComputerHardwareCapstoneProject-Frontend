@@ -202,6 +202,7 @@ button:active {
   display: flex;
   justify-content: center;
   padding-bottom: 20px;
+  color: black;
 }
 #viewproduct {
   width: 109px;
@@ -217,6 +218,7 @@ button:active {
 }
 h2 {
   margin-top: 160px;
+  color: black;
 }
 .cards {
   padding-top: 10px;
@@ -227,7 +229,11 @@ h2 {
   width: 150px;
 }
 .products {
-  background-color: #ffffff;
+  background: linear-gradient(   red, blue);
+  height: 100%;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  scroll-behavior: smooth;
 }
 .card {
   height:380px;
@@ -236,14 +242,12 @@ h2 {
 }
 .bottom {
   padding-bottom: 150px;
-  margin-bottom: 150px;
 }
 img{
   box-shadow: none;
 }
 section{
   scroll-behavior: smooth;
-  height: 100vh;
 }
 @media only screen and (min-width:300px) and (max-width: 301px){
   section{

@@ -151,10 +151,10 @@ addCart(context, payload){
 })
 },
 // DELETE ITEM
-DeleteItem: async (context, product, id) => {
+DeleteItem: async (context, product) => {
   console.log(product);
-  id = context.state.user.user_id;
-  fetch(`https://computer-hardware-capstone.herokuapp.com/users/${id}/cart/${product}`, {
+  id = context.state.user.id;
+  fetch(`https://computer-hardware-capstone.herokuapp.com/users/${id}/cart/${product.id}`, {
     method: "DELETE",
     body: JSON.stringify(product),
     headers: {
@@ -217,7 +217,7 @@ async getUsers(context) {
 // DELETE USER
 async deleteUser(context, payload) {
   console.log(payload.id);
-  fetch('https://computer-hardware-capstone.herokuapp.com/user/' + payload.id, {
+  fetch('https://computer-hardware-capstone.herokuapp.com/user/' + context.state.user.id, {
       method: 'DELETE',
       headers: {
         'Content-type': 'application/json; charset=UTF-8',

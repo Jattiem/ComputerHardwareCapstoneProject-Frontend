@@ -1,13 +1,13 @@
 <template>
-    <Aboutcomponent/>
+    <Contactcomponent/>
     </template>
     <script>
-    import Aboutcomponent from "../components/About.vue";
+    import Contactcomponent from "../components/Contact.vue";
     export default {
       computed:{
       },
       components: {
-        Aboutcomponent,
+        Contactcomponent,
     },
       mounted(){
       }

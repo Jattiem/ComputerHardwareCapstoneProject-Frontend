@@ -22,7 +22,7 @@
     
     <style scoped>
 footer{
-  border-top: 2px solid red;
+  border-top: 2px solid blue;
   width: 100%;
   bottom: 0;
 }

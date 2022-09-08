@@ -1,112 +1,18 @@
 <template>
-    <Navbar/>
-      <section class="vh-100" style="background-color: #eee;"  v-if="user" >
-      <div class="container">
-        <h2 class="text-center">Profile</h2>
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="card mb-4">
-              <div class="card-body text-center">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
-                  class="rounded-circle img-fluid" style="width: 150px;">
-                <h5 class="my-3">{{user.fullname}}</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-8 second">
-            <div class="card mb-4">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-sm-3">
-                    <p class="mb-0">Fullname</p>
-                  </div>
-                  <div class="col-sm-9">
-                    <p class="text-muted mb-3">{{user.fullname}}</p>
-                  </div>
-                </div>
-                <hr>
-                <div class="row">
-                  <div class="col-sm-3">
-                    <p class="mb-0">Email</p>
-                  </div>
-                  <div class="col-sm-9">
-                    <p class="text-muted mb-3">{{user.email}}</p>
-                  </div>
-                </div>
-                <hr>
-                <div class="row">
-                  <div class="col-sm-3">
-                    <p class="mb-0">Phone</p>
-                  </div>
-                  <div class="col-sm-9">
-                    <p class="text-muted mb-3">{{user.phonenumber}}</p>
-                  </div>
-                </div>
-                <hr>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    </template>
-    
-    <script>
-    import Navbar from '../components/Navbar.vue';
-    export default {
-      mounted() {
-    this.$store.dispatch("getUsers");
-  },
-  computed: {
-    user() {
-      return this.$store.state.user;
+  <Profilecomponent/>
+  </template>
+  <script>
+  import Profilecomponent from "../components/Profile.vue";
+  export default {
+    computed:{
     },
+    components: {
+      Profilecomponent,
   },
-      components: {
-        Navbar,
+    mounted(){
     }
-    }
-    </script>
-    
-    <style scoped>
-    section{
-      padding-left: 10px;
-  padding-right: 10px;
-        padding-top: 140px;
-        background: linear-gradient(   red, blue);
-        overflow-x: hidden;
-    }
-    h2{
-      color: black;
-    }
-    @media only screen and (min-width:300px) and (max-width: 301px){
-      section{
-        padding-top: 130px;
-        padding-bottom: 150px;
-      }
-    }
-    @media only screen and (min-width:320px) and (max-width: 321px){
-      section{
-        padding-top: 130px;
-        padding-bottom: 150px;
-      }
-    }
-    @media only screen and (min-width:375px) and (max-width: 376px){
-      section{
-        padding-top: 130px;
-        padding-bottom: 150px;
-      }
-    }
-    @media only screen and (min-width:425px) and (max-width: 426px){
-      section{
-        padding-top: 130px;
-        padding-bottom: 150px;
-      }
-    }
-    @media only screen and (min-width:768px) and (max-width: 769px){
-      section{
-        padding-top: 130px;
-        padding-bottom: 130px;
-      }
-    }
-    </style>
+  };
+  </script>
+  
+  <style scoped>
+  </style>

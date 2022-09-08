@@ -121,7 +121,6 @@ img {
 }
 .shopicon {
   font-size: 25px;
-  /* padding-bottom: 16px; */
   padding-left: 175px;
 }
 .shopicon:hover {
