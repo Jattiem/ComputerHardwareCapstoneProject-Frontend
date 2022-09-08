@@ -99,7 +99,8 @@
     }
     @media only screen and (min-width:300px) and (max-width: 301px){
       section{
-        margin-bottom: 140px;
+        margin-top:-40px;
+        margin-bottom: 150px;
       }
       .card{
         height: 450px;
@@ -113,7 +114,8 @@
     }
     @media only screen and (min-width:320px) and (max-width: 321px){
       section{
-        margin-bottom: 140px;
+        margin-top: -40px;
+        margin-bottom: 150px;
       }
       .card{
         height: 450px;
@@ -127,7 +129,8 @@
     }
     @media only screen and (min-width:375px) and (max-width: 376px){
       section{
-        margin-bottom: 140px;
+        margin-top: -40px;
+        margin-bottom: 150px;
       }
       .card{
         height: 450px;
@@ -141,7 +144,8 @@
     }
     @media only screen and (min-width:425px) and (max-width: 426px){
       section{
-        margin-bottom: 140px;
+        margin-top: -40px;
+        margin-bottom: 150px;
       }
       .card{
         height: 450px;

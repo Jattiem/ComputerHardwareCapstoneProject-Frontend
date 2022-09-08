@@ -6,7 +6,7 @@
   <div class="col">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">About Me</h5>
+        <h3 class="card-title">About Me</h3>
         <p><img src="https://i.postimg.cc/GmRmj6j4/Yaseen-1.jpg" class="img-fluid me" alt="img">
         </p>
         <p class="card-text">My curiosity for coding led me to become more interested in coding,Since I know that technology is the norm for everyone I became more interested and wanted to do more with coding.Which led me to become a Aspring Full Stack Developer</p>
@@ -16,7 +16,7 @@
   <div class="col">
     <div class="card PCGAMING">
       <div class="card-body">
-        <h5 class="card-title">About Pc Gaming</h5>
+        <h3 class="card-title">About Pc Gaming</h3>
         <p><img src="https://i.postimg.cc/mk3ChYhQ/wp9360883.jpg" class="img-fluid" alt="img">
         </p>
         <p class="card-text">Pc Gaming is a company that sells all the latest Gaming Pc's for less.Estabilished in 15/062022.
@@ -36,24 +36,11 @@
     </script>
     <style scoped>
     section{
-        padding-top: 140px;
+        padding-top: 170px;
       background: linear-gradient(   red, blue);
-      /* overflow-x: hidden; */
+      overflow-x: hidden;
       scroll-behavior: smooth;
-      margin-bottom: 90px;
-    }
-    .row{
-        border: 1px solid gray;
-        border-radius: 20px;
-        margin-left: 150px;
-        margin-right: 150px;
-        display: flex;
-        font-size: larger;
-        justify-content: center;
-        padding: 30px;
-        border-radius: 10px;
-    background: linear-gradient(145deg, #e6e6e6, #ffffff);
-    height: 510px;
+      /* margin-bottom: 90px; */
     }
     img{
         height: 200px;
@@ -69,7 +56,10 @@
         object-position: 0 0.5px;
     }
     .PCGAMING{
-        height: 454px;
+        height: 364px;
+    }
+    h3{
+        color: black;
     }
     @media only screen and (min-width:300px) and (max-width: 301px){
         .row{

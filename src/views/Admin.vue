@@ -2,7 +2,7 @@
   <Navbar />
   <section class="admin" v-if="user">
     <h2 class="h2 pt-2">Admin</h2>
-    <div class="container">
+    <div class="container fluid">
         <div class="table-responsive">
       <table class="table">
         <tr>
@@ -71,7 +71,7 @@
           <td><img :src="product.img" class="img-fluid"/></td>
           <td>{{ product.category }}</td>
           <td class="des" style="width: 20rem">{{ product.description }}</td>
-          <td>R {{ product.price }}</td>
+          <td>$ {{ product.price }}</td>
           <td>
             <a  data-bs-toggle="modal" :data-bs-target="`#editProduct`+product.id" href="" class="iconadmin bi bi-pencil-square"></a>
             <EditProduct :product="product" />
@@ -130,6 +130,7 @@ export default {
       }
 .admin {
   min-height: 100vh;
+  
 }
 #delete {
   border: none;
@@ -179,7 +180,7 @@ table th {
   text-transform: uppercase;
 }
 /* @Media */
-/* @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
       table {
         border: 0;
         text-align: center;
@@ -225,5 +226,5 @@ table th {
 
         border-bottom: 0;
       }
-    } */
+    }
 </style>

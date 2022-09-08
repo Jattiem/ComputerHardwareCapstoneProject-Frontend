@@ -76,12 +76,14 @@ input{
 .container{
   padding-top: 170px;
 }
-
+h3{
+  color: black;
+}
 @media only screen and (min-width:300px) and (max-width: 301px){
   section{
     overflow-x: hidden;
-     margin-top: -45px;
-     margin-bottom: 100px;
+    margin-top: -30px;
+     margin-bottom: 60px;
   }
   .card{
     height: 350px;
@@ -94,8 +96,8 @@ input{
 @media only screen and (min-width:320px) and (max-width: 321px){
   section{
     overflow-x: hidden;
-     margin-top: -45px;
-     margin-bottom: 100px;
+     margin-top: -30px;
+     margin-bottom: 60px;
   }
   .card{
     height: 350px;
@@ -108,8 +110,8 @@ input{
 @media only screen and (min-width:375px) and (max-width: 376px){
   section{
     overflow-x: hidden;
-     margin-top: -45px;
-     margin-bottom: 100px;
+    margin-top: -30px;
+     margin-bottom: 60px;
   }
   .card{
     height: 350px;
@@ -122,8 +124,8 @@ input{
 @media only screen and (min-width:425px) and (max-width: 426px){
   section{
     overflow-x: hidden;
-     margin-top: -45px;
-     margin-bottom: 100px;
+    margin-top: -30px;
+     margin-bottom: 60px;
   }
   .card{
     height: 350px;

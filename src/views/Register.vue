@@ -11,24 +11,24 @@
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
-                        <input type="text" v-model="fullname" id="user_fullname" placeholder="Enter Your Full Name" required class="form-control form-control-lg"/>
+                        <input type="text" v-model="fullname" id="user_fullname" placeholder="Fullname" required class="form-control form-control-lg"/>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
-                        <input type="password" v-model="password" id="password" placeholder="Enter Your Password" minlength="8" maxlength="15" required class="form-control form-control-lg"/>
+                        <input type="password" v-model="password" id="password" placeholder="Password" minlength="8" maxlength="15" required class="form-control form-control-lg"/>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6 mb-4 pb-2">
                       <div class="form-outline">
-                        <input class="form-control form-control-lg" type="email" v-model="email" id="email" placeholder="Enter Your Email" required/>
+                        <input class="form-control form-control-lg" type="email" v-model="email" id="email" placeholder="Email" required/>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4 pb-2">
                       <div class="form-outline">
-                        <input class="form-control form-control-lg" type="tel" v-model="phonenumber" id="phone_number" placeholder=" Enter Your Phone Number" maxlength="10" required/>
+                        <input class="form-control form-control-lg" type="tel" v-model="phonenumber" id="phone_number" placeholder="Phone number" maxlength="10" required/>
                       </div>
                     </div>
                   </div>
@@ -88,17 +88,19 @@
     margin-top: -10px;
 }
   .card{
-    height: 320px;
+    height: 350px;
     border-radius: 10px;
     box-shadow: 3px 3px 3px 3px white;
 }
   .container{
     padding-top: 170px;
 }
-
+h3{
+  color: black;
+}
 @media only screen and (min-width:300px) and (max-width: 301px){
   section{
-    margin-bottom: 140px;
+    margin-bottom: 150px;
     margin-top: -30px;
   }
   .card{
@@ -110,7 +112,7 @@
 }
 @media only screen and (min-width:320px) and (max-width: 321px){
   section{
-    margin-bottom: 140px;
+    margin-bottom: 150px;
     margin-top: -30px;
   }
   .card{
@@ -122,7 +124,7 @@
 }
 @media only screen and (min-width:375px) and (max-width: 376px){
   section{
-    margin-bottom: 140px;
+    margin-bottom: 150px;
     margin-top: -30px;
   }
   .card{
@@ -134,7 +136,7 @@
 }
 @media only screen and (min-width:425px) and (max-width: 426px){
   section{
-    margin-bottom: 140px;
+    margin-bottom: 150px;
     margin-top: -30px;
   }
   .card{

@@ -12,7 +12,7 @@
             <img :src="product.img" alt="Cart Item" class="img-fluid">
             <h3 class="pt-1">{{product.brand}}</h3>
             <h5>R{{product.price}}</h5>
-            <button  @click="this.$store.dispatch('DeleteItem',product.id)"  >Remove from Cart</button>
+            <button class="btn btn-primary"  @click="this.$store.dispatch('DeleteItem',product.id)"  >Remove from Cart</button>
         </div>
       </div>
       <div v-else>
@@ -30,6 +30,7 @@
   import Cards from '../components/Cards.vue'
   
   export default {
+    props: ["id"],
     components:{Cards},
       computed:{
         user(){
@@ -44,7 +45,10 @@
           this.$store.dispatch('deleteCart')
           this.cart = null
         }
-      }
+      },
+      mounted() {
+    this.$store.dispatch("getUserCart");
+  },
   }
   </script>
   

@@ -137,5 +137,19 @@ button:hover{
   font-size: 30px;
   padding-right: 30px;
 }
-
+@media only screen and (min-width:300px) and (max-width: 301px){
+  .shopicon{
+    padding-left: 125px;
+  }
+}
+@media only screen and (min-width:320px) and (max-width: 321px){
+  .shopicon{
+    padding-left: 135px;
+  }
+}
+@media only screen and (min-width:375px) and (max-width: 376px){
+  .shopicon{
+    padding-left: 162px;
+  }
+}
 </style>

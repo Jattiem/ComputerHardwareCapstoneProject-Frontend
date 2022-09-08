@@ -6,15 +6,8 @@
         <div class="col-md-3">
           <label for="sortby">Sort by:</label>
           <select class="form-select" name="sort-by">
-            <option  value="Ascending">Ascending</option>
-            <option  value="Descending">Descending</option>
-          </select>
-        </div>
-        <div class="col-md-3">
-          <label for="sortby">Sort by:</label>
-          <select class="form-select" name="sort-by">
-            <option value="Ascending">Max price</option>
-            <option value="Descending">Min price</option>
+            <option value="Ascending">Ascending</option>
+            <option value="Descending">Descending</option>
           </select>
         </div>
         <div class="col-md-3">
@@ -36,7 +29,7 @@
           </div>
           <div class="card-body">
             <h5 class="card-title">{{ product.brand }}</h5>
-            <h5>R {{ product.price }}</h5>
+            <h5>$ {{ product.price }}</h5>
             <router-link
               :to="{
                 name: 'singleProduct',
@@ -85,7 +78,7 @@ export default {
           }
           return Match
           })
-        }
+        },
   },
   mounted() {
     this.$store.dispatch("getProducts");
@@ -251,5 +244,45 @@ img{
 section{
   scroll-behavior: smooth;
   height: 100vh;
+}
+@media only screen and (min-width:300px) and (max-width: 301px){
+  section{
+    margin-top:-30px;
+  }
+  .bottom{
+    padding-bottom: 160px;
+  }
+}
+@media only screen and (min-width:320px) and (max-width: 321px){
+  section{
+    margin-top:-30px;
+  }
+  .bottom{
+    padding-bottom: 160px;
+  }
+}
+@media only screen and (min-width:375px) and (max-width: 376px){
+  section{
+    margin-top:-30px;
+  }
+  .bottom{
+    padding-bottom: 160px;
+  }
+}
+@media only screen and (min-width:425px) and (max-width: 426px){
+  section{
+    margin-top:-30px;
+  }
+  .bottom{
+    padding-bottom: 160px;
+  }
+}
+@media only screen and (min-width:768px) and (max-width: 769px){
+  section{
+    margin-top:-30px;
+  }
+  .bottom{
+    padding-bottom: 160px;
+  }
 }
 </style>

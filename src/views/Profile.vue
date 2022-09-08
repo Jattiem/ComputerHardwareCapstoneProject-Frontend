@@ -79,4 +79,34 @@
     h2{
       color: black;
     }
+    @media only screen and (min-width:300px) and (max-width: 301px){
+      section{
+        padding-top: 130px;
+        padding-bottom: 150px;
+      }
+    }
+    @media only screen and (min-width:320px) and (max-width: 321px){
+      section{
+        padding-top: 130px;
+        padding-bottom: 150px;
+      }
+    }
+    @media only screen and (min-width:375px) and (max-width: 376px){
+      section{
+        padding-top: 130px;
+        padding-bottom: 150px;
+      }
+    }
+    @media only screen and (min-width:425px) and (max-width: 426px){
+      section{
+        padding-top: 130px;
+        padding-bottom: 150px;
+      }
+    }
+    @media only screen and (min-width:768px) and (max-width: 769px){
+      section{
+        padding-top: 130px;
+        padding-bottom: 130px;
+      }
+    }
     </style>

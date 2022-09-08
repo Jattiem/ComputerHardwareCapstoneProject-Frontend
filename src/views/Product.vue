@@ -8,7 +8,7 @@
             <div class="card-body bg-light">
               <h5 class="card-title1">{{product.brand}}</h5>
               <h5 class="card-title1">{{product.Model}}</h5>
-              <h5 class="card-title">R{{product.price}}</h5>
+              <h5 class="card-title">${{product.price}}</h5>
               <h5 class="card-title">{{product.description}}</h5> 
                   <button class="btn btn-dark text-black" @click="this.$store.dispatch('addCart', product)" target="_blank">Add to Cart</button>
             </div>           
