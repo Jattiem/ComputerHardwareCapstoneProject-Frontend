@@ -11,8 +11,8 @@
         <div id="card" v-for="product in cart" :key="product" :product="product">
             <img :src="product.img" alt="Cart Item" class="img-fluid">
             <h3 class="pt-1">{{product.brand}}</h3>
-            <h5>R{{product.price}}</h5>
-            <button class="btn btn-primary"  @click="this.$store.dispatch('DeleteItem',product.id)"  >Remove from Cart</button>
+            <h5>$ {{product.price}}</h5>
+            <button class="btn btn-primary"  @click="deleteP(product.id)"  >Remove from Cart</button>
         </div>
       </div>
       <div v-else>
@@ -44,6 +44,9 @@
         clear(){
           this.$store.dispatch('deleteCart')
           this.cart = null
+        },
+        deleteP(id){
+          this.$store.dispatch('DeleteItem', id)
         }
       },
       mounted() {
@@ -79,10 +82,11 @@ img{
     padding: 10px 10px 10px 10px;
     width: 200px;
     border: 1px;
-    background: linear-gradient(315deg, #dadada, #ffffff);
-    box-shadow:  10px 10px 30px #bababa;
+    border-radius: 20px;
+    background: rgb(236, 236, 236);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     margin: 0 !important;
     margin-bottom: 100px;
   }
-  
   </style>

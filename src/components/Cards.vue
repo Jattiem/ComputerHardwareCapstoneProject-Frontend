@@ -217,19 +217,17 @@ button:active {
   color: rgba(0, 0, 0, 0.795);  
 }
 h2 {
-  margin-top: 160px;
-  color: black;
+  margin-top: 160px;  
 }
 .cards {
   padding-top: 10px;
   object-fit: contain;
-  border-radius: 1px;
+  border-radius: 20px;
   border: 1px;
   height: 200px;
   width: 150px;
 }
 .products {
-  background: linear-gradient(   red, blue);
   height: 100%;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -239,6 +237,7 @@ h2 {
   height:380px;
   width: 250px;
   margin-bottom: 10px;
+  border-radius: 20px;
 }
 .bottom {
   padding-bottom: 150px;

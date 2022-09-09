@@ -35,6 +35,9 @@
         }
         </script>
         <style scoped>
+            .card{
+                border-radius: 20px;
+            }
         section{
             padding-top: 170px;
           background: linear-gradient(   red, blue);

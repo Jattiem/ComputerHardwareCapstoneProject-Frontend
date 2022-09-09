@@ -44,14 +44,16 @@ footer{
 .rounded-social-buttons {
   text-align: center;
   padding-top: 10px;
+  /* padding-bottom: -11px; */
+  margin-bottom: -11px;
 }
 
 .rounded-social-buttons .social-button {
   display: inline-block;
   position: relative;
   cursor: pointer;
-  width: 3.125rem;
-  height: 3.125rem;
+  width: 3.110rem;
+  height: 3.110rem;
   border: 0.125rem solid transparent;
   padding: 0;
   text-decoration: none;

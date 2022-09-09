@@ -67,8 +67,7 @@
   }
   .card{
     height: 340px;
-    border-radius: 10px;
-    box-shadow: 3px 3px 3px 3px white;
+    border-radius: 20px;
   }
   .page-link{
     color: rgba(0, 0, 0, 0.795);

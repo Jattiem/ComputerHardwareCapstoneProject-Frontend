@@ -7,7 +7,7 @@
             <div class="card-body">
               <h5 class="card-title1">{{product.brand}}</h5>
               <h6 class="card-title1">{{product.Model}}</h6>
-              <h6 class="card-title">${{product.price}}</h6>
+              <h6 class="card-title">$ {{product.price}}</h6>
               <h6 class="card-title">{{product.description}}</h6> 
                   <button class="btn btn-dark text-black" @click="this.$store.dispatch('addCart', product)" target="_blank">Add to Cart</button>
             </div>           
@@ -129,6 +129,11 @@
       }
     }
     @media only screen and (min-width:768px) and (max-width: 769px){
+      section{
+        padding-bottom: 170px;
+      }
+    }
+    @media only screen and (min-width:1024px) and (max-width: 1025px){
       section{
         padding-bottom: 170px;
       }

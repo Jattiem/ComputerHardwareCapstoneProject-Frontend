@@ -2,6 +2,7 @@ import {
   createStore
 } from 'vuex'
 import router from '@/router'
+import swal from 'sweetalert';
 export default createStore({
   state: {
     products: null,
@@ -66,12 +67,28 @@ login(context, payload){
   .then((data) => {
     console.log(data);
     if (data.msg == 'Email Not Found. Please register') {
-      alert(data.msg)
+      // alert(data.msg)
+      swal({
+        icon: "error",
+        title: "Email Not Found. Please register",
+        text: "Type in the proper email",
+        buttons: "Try Again"
+      })
     } else {
       if (data.msg == 'Password is Incorrect') {
-        alert(data.msg)
+        // alert(data.msg)
+        swal({
+          icon: "error",
+          title: "Incorrect Password",
+          buttons: "Try Again"
+        })
       } else {
-        alert(`Welcome, ${data.user[0].fullname} to PC Gaming`)
+        // alert(`Welcome, ${data.user[0].fullname} to PC Gaming`)
+        swal({
+          icon: "success",
+          title: `Welcome , ${data.user[0].fullname}`,
+          closeOnClickOutside: false
+        })
         context.commit('setUser',data.user[0])
         context.commit('setToken',data.token)
         context.dispatch('getUserCart')
@@ -151,10 +168,9 @@ addCart(context, payload){
 })
 },
 // DELETE ITEM
-DeleteItem: async (context, product) => {
-  console.log(product);
+DeleteItem: async (context, product , id) => {
   id = context.state.user.id;
-  fetch(`https://computer-hardware-capstone.herokuapp.com/users/${id}/cart/${product.id}`, {
+  fetch(`https://computer-hardware-capstone.herokuapp.com/users/${id}/cart/${product}`, {
     method: "DELETE",
     body: JSON.stringify(product),
     headers: {
@@ -164,7 +180,7 @@ DeleteItem: async (context, product) => {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      context.dispatch("getUserCart", id);
+      context.dispatch("getUserCart");
     });
 },
 // DELETE CART

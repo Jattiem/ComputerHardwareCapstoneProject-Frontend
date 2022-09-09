@@ -4,7 +4,7 @@
         <div class="container">
           <div class="row justify-content-center align-items-center h-100">
             <div class="col-12 col-lg-9 col-xl-7">
-              <div class="card shadow-2-strong card-registration" style="border-radius: 10px;">
+              <div class="card shadow-2-strong card-registration">
                 <div class="card-body">
                   <h3 class="pb-4">Register</h3>
                   <form @submit.prevent="register" method="POST">
@@ -89,8 +89,7 @@
   }
     .card{
       height: 350px;
-      border-radius: 10px;
-      box-shadow: 3px 3px 3px 3px white;
+      border-radius: 20px;
   }
     .container{
       padding-top: 170px;

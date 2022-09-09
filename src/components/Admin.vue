@@ -147,6 +147,7 @@
     flex-direction: row;
     padding-bottom: 10px;
     text-decoration: none;
+    font-weight: bold;
   }
   .iconadmin {
     font-size: x-large;

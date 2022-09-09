@@ -112,10 +112,9 @@ nav a.router-link-exact-active {
   font-weight: bold;
 }
 img {
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
   object-fit: cover;
-  height: 80px;
       border-radius: 50px;
       box-shadow: 3px 3px 3px red;
 }
