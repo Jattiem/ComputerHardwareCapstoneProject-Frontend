@@ -65,25 +65,22 @@ login(context, payload){
   })
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
+    // console.log(data);
     if (data.msg == 'Email Not Found. Please register') {
-      // alert(data.msg)
       swal({
         icon: "error",
-        title: "Email Not Found. Please register",
+        title: `Email Not Found. Please register`,
         text: "Type in the proper email",
         buttons: "Try Again"
       })
     } else {
       if (data.msg == 'Password is Incorrect') {
-        // alert(data.msg)
         swal({
           icon: "error",
           title: "Incorrect Password",
           buttons: "Try Again"
         })
       } else {
-        // alert(`Welcome, ${data.user[0].fullname} to PC Gaming`)
         swal({
           icon: "success",
           title: `Welcome , ${data.user[0].fullname}`,
@@ -93,7 +90,7 @@ login(context, payload){
         context.commit('setToken',data.token)
         context.dispatch('getUserCart')
         setTimeout(()=>{
-          router.push('/landing'), 5000
+          router.push('/products'), 3000
         })
       }
     }
@@ -119,12 +116,23 @@ register(context, payload) {
     .then((response) => response.json())
     .then((data) => {
       if (data.msg == "The provided email exists. Please enter another one") {
-        alert("The provided email exists. Please enter another one");
+        // alert("The provided email exists. Please enter another one");
+        swal({
+          icon: "error",
+          title: "The provided email exists",
+          text: "Please try another email",
+          button: "OK"
+        })
       } else {
-        alert('Registration Successful');
+        // alert('Registration Successful');
+        swal({
+              icon: "success",
+              title: "Registration Successful",
+              buttons: "OK"
+            })
         context.commit('setToken', data.token);
         setTimeout(() => {
-          router.push('/login'), 5000
+          router.push('/login'), 3000
         })
       }
 
@@ -137,7 +145,7 @@ register(context, payload) {
 async getUserCart(context) {
   let fetched = await fetch('https://computer-hardware-capstone.herokuapp.com/users/' + context.state.user.id + '/cart');
   let res = await fetched.json();
-  console.log(res);
+  // console.log(res);
   context.commit('setUserCart', res.cart)
 },
 // ADD CART
@@ -160,9 +168,19 @@ addCart(context, payload){
   .then((response) => response.json())
   .then((data) => {
       if (data.results == 'There is no user with that id') {
-        alert(data.results)
+        // alert(data.results)
+        swal({
+          icon: "error",
+          title: `There is no user with that id`,
+          closeOnClickOutside: false
+        })
       } else {
-        alert('Item Added')
+        // alert('Item Added')
+        swal({
+          icon: "success",
+          title: `Item Added`,
+          buttons: "OK"
+        })
         context.dispatch('getUserCart')
       }
 })
@@ -179,8 +197,13 @@ DeleteItem: async (context, product , id) => {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
-      context.dispatch("getUserCart");
+      // console.log(data);
+      swal({
+        icon: "success",
+        title: `${data.result}`,
+        buttons: "OK"
+      })
+      context.dispatch("getUserCart" ,data.result);
     });
 },
 // DELETE CART
@@ -191,26 +214,29 @@ deleteCart(context) {
     .then((res) => res.json())
     .then((data) => {
       if (data.result == 'There is no user with that ID') {
-        alert(data.result)
+        // alert(data.result)
+        swal({
+          icon: "error",
+          title: `There is no user with that ID`,
+          closeOnClickOutside: false
+        })
       } else {
-        alert(
-          'Thank you for shopping with PC Gaming')
-        context.dispatch('getUserCart')
+        // alert(
+        //   'Thank you for shopping with PC Gaming')
+        swal({
+          icon: "success",
+          title: `${data.results}`,
+          buttons: "OK"
+        })
+        context.dispatch('getUserCart', data.results)
       }
     })
 },
 // 
 // USER
-// GET USERS
-async getUsers(context) {
-  let fetched = await fetch('https://computer-hardware-capstone.herokuapp.com/users');
-  let res = await fetched.json();
-  console.log(res.products);
-  context.commit('setUsers', res.users)
-},
 // EDIT USER
 async editUser(context, payload) {
-  fetch('https://computer-hardware-capstone.herokuapp.com/user/' + payload.id, {
+  fetch('https://computer-hardware-capstone.herokuapp.com/users/' + payload.id, {
       method: 'PUT',
       body: JSON.stringify(payload),
       headers: {
@@ -219,9 +245,12 @@ async editUser(context, payload) {
     })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
-      alert(data.msg)
-      context.dispatch('getUsers')
+      swal({
+        icon: "success",
+        title: `${data.msg}`,
+        closeOnClickOutside: false
+      })
+      context.dispatch('getUsers', data.msg)
     });
 },
 // GET USERS
@@ -231,9 +260,8 @@ async getUsers(context) {
   context.commit('setUsers', res.users)
 },
 // DELETE USER
-async deleteUser(context, payload) {
-  console.log(payload.id);
-  fetch('https://computer-hardware-capstone.herokuapp.com/user/' + context.state.user.id, {
+async deleteUser(context, id) {
+  fetch('https://computer-hardware-capstone.herokuapp.com/users/' + id, {
       method: 'DELETE',
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
@@ -241,7 +269,11 @@ async deleteUser(context, payload) {
     })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data)
+      swal({
+        icon: "success",
+        title: `${data.msg}`,
+        closeOnClickOutside: false
+      })
       context.dispatch('getUsers')
     })
 },
@@ -258,9 +290,13 @@ async addProduct(context, payload) {
     })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
-      alert(data.msg)
-      context.dispatch('getProducts')
+      // alert(data.msg)
+      swal({
+        icon: "success",
+        title: `${data.msg}`,
+        closeOnClickOutside: false
+      })
+      context.dispatch('getProducts', data.msg)
     });
 },
 // EDIT PRODUCT
@@ -274,9 +310,12 @@ async editProduct(context, payload) {
     })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
-      alert(data.msg)
-      context.dispatch('getProducts')
+      swal({
+        icon: "success",
+        title: `${data.msg}`,
+        closeOnClickOutside: false
+      })
+      context.dispatch('getProducts', data.msg)
     });
 },
 // DELETE PRODUCT
@@ -290,15 +329,20 @@ async editProduct(context, payload) {
         })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data)
-          context.dispatch('getProducts')
+          // console.log(data)
+          swal({
+            icon: "success",
+            title: `${data.msg}`,
+            closeOnClickOutside: false
+          })
+          context.dispatch('getProducts', data.msg)
         })
     },
 // GET PRODUCTS
     async getProducts(context) {
       let fetched = await fetch('https://computer-hardware-capstone.herokuapp.com/products');
       let res = await fetched.json();
-      console.log(res.products);
+      // console.log(res.products);
       context.commit('setProducts', res.products)
     },
 
@@ -306,7 +350,7 @@ async editProduct(context, payload) {
     async getProduct(context, id) {
       let fetched = await fetch('https://computer-hardware-capstone.herokuapp.com/products/' + id);
       let res = await fetched.json();
-      console.log(res);
+      // console.log(res);
       context.commit('setProduct', res.products[0])
     }
   },

@@ -17,6 +17,8 @@
                       <div class="row">
                         <button  v-on:click="submit" class="login btn btn-dark btn-block">Login</button>
                       </div>
+                      <!-- <button to="/register">Don't have a account? Sign Up</button> -->
+                      <router-link class="nav-link register"  to="/register">Don't have a account? Sign Up</router-link>
                     </form>
                 </div>
               </div>
@@ -50,7 +52,14 @@
   </script>
     
   <style scoped>
-  
+  .register{
+    padding-top: 10px;
+    /* color: ; */
+    text-decoration: underline;
+  }
+  .register:hover{
+    color: rgb(0, 115, 255);
+  }
   section{
     scroll-behavior: smooth;
     background: linear-gradient(   red, blue);
@@ -66,7 +75,7 @@
     margin-top: 40px;
   }
   .card{
-    height: 340px;
+    height: 360px;
     border-radius: 20px;
   }
   .page-link{

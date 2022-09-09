@@ -68,7 +68,7 @@
           this.$store.dispatch('register', user) 
   }
   },
-          components: { Navbar2 }
+          components: { Navbar2}
   };
   </script>
       

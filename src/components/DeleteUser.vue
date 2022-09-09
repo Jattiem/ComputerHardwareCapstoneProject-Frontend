@@ -7,9 +7,9 @@
                     <button type="button" :id="`deleteUserClose`+user.id" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h5>Are you sure you want to delete this item?</h5>
+                    <h5>Are you sure you want to delete {{user.fullname}}?</h5>
                     <button id="cancel" data-bs-dismiss="modal" class="btn btn-primary">CANCEL</button>
-                    <button class="btn btn-danger" @click="deleteUser" data-bs-dismiss="modal">DELETE</button>
+                    <button class="btn btn-danger" @click="deleteUser(user.id)" data-bs-dismiss="modal">DELETE</button>
                 </div>
             </div>
         </div>
@@ -19,9 +19,8 @@
 export default {
     props:['user'],
     methods:{
-        deleteUser(){
-            this.$store.dispatch('deleteUser',this.user);
-            
+        deleteUser(id){
+            this.$store.dispatch('deleteUser',id);
         }
     }
 }

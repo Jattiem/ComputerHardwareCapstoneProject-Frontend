@@ -248,6 +248,9 @@ img{
 section{
   scroll-behavior: smooth;
 }
+/* input{
+  margin-left: -370px;
+} */
 @media only screen and (min-width:300px) and (max-width: 301px){
   section{
     margin-top:-30px;
