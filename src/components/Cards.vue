@@ -293,6 +293,9 @@ section{
   .bottom{
     padding-bottom: 160px;
   }
+  .sortin{
+    padding-left: 10px;
+  }
 }
 @media only screen and (min-width:320px) and (max-width: 321px){
   section{
@@ -300,6 +303,9 @@ section{
   }
   .bottom{
     padding-bottom: 160px;
+  }
+  .sortin{
+    padding-left: 10px;
   }
 }
 @media only screen and (min-width:375px) and (max-width: 376px){
@@ -309,6 +315,9 @@ section{
   .bottom{
     padding-bottom: 160px;
   }
+  .sortin{
+    padding-left: 10px;
+  }
 }
 @media only screen and (min-width:425px) and (max-width: 426px){
   section{
@@ -317,6 +326,9 @@ section{
   .bottom{
     padding-bottom: 160px;
   }
+  .sortin{
+    padding-left: 10px;
+  }
 }
 @media only screen and (min-width:768px) and (max-width: 769px){
   section{
@@ -324,6 +336,9 @@ section{
   }
   .bottom{
     padding-bottom: 160px;
+  }
+  .sortin{
+    padding-left: 10px;
   }
 }
 </style>
