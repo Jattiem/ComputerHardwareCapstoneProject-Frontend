@@ -3,12 +3,25 @@
     <h2 class="h2">Products</h2>
     <div class="container">
       <div class="row sort">
-        <div class="col-md-3">
-          <label for="sortby">Sort by:</label>
-          <select class="form-select" name="sort-by">
-            <option value="Ascending">Ascending</option>
-            <option value="Descending">Descending</option>
-          </select>
+        <div class="col-md-3 sortin">
+          <div class="dropdown">
+          <button
+            class="btn btn-secondary"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Sort By:
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" value="Ascending" @click="brandBS">Ascending</a>
+            </li>
+            <li>
+              <a class="dropdown-item" value="Descending" @click="brandSB">Descending</a>
+            </li>
+          </ul>
+        </div>
         </div>
         <div class="col-md-3">
           <input class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search" v-model="search"> 
@@ -83,10 +96,32 @@ export default {
   mounted() {
     this.$store.dispatch("getProducts");
   },
+  methods: {
+    brandBS() {
+      const brand = this.$store.state.products;
+      brand.sort((a, b) => {
+        if (a.brand < b.brand) return -1;
+        {
+        }
+      });
+    },
+    brandSB() {
+      const brand = this.$store.state.products;
+      brand.sort((b, a) => {
+        if (a.brand < b.brand) return -1;
+        {
+        }
+      });
+    },
+  },
 };
 </script>
 
 <style scoped>
+  .sortin{
+    margin-top: 17px;
+    padding-left: 70px;
+  }
   .search{
     margin-top: 24px;
   }
@@ -187,7 +222,7 @@ export default {
 button {
   color: #090909;
   padding: 0.7em 1.7em;
-  font-size: 18px;
+  font-size: 15px;
   border-radius: 0.5em;
   background: #e8e8e8;
   border: 1px solid #e8e8e8;
